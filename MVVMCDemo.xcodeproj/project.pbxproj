@@ -7,23 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB9945D45449D3AA6FE00FEE /* Pods_MVVMCDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B2CB65EC0DD1411838FE41 /* Pods_MVVMCDemo.framework */; };
 		FD072D0828A1836F00F7B167 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D0728A1836F00F7B167 /* AppDelegate.swift */; };
-		FD072D0A28A1836F00F7B167 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D0928A1836F00F7B167 /* SceneDelegate.swift */; };
-		FD072D0C28A1836F00F7B167 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D0B28A1836F00F7B167 /* ViewController.swift */; };
-		FD072D0F28A1836F00F7B167 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD072D0D28A1836F00F7B167 /* Main.storyboard */; };
+		FD072D0C28A1836F00F7B167 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D0B28A1836F00F7B167 /* MainTabBarViewController.swift */; };
 		FD072D1128A1837000F7B167 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD072D1028A1837000F7B167 /* Assets.xcassets */; };
 		FD072D1428A1837000F7B167 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD072D1228A1837000F7B167 /* LaunchScreen.storyboard */; };
+		FD072D2228A1886700F7B167 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D2128A1886700F7B167 /* AppCoordinator.swift */; };
+		FD072D7228A19EA400F7B167 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D6E28A19EA400F7B167 /* Coordinator.swift */; };
+		FD072D7328A19EA400F7B167 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D6F28A19EA400F7B167 /* NavigationRouter.swift */; };
+		FD072D7928A19F7200F7B167 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D7828A19F7200F7B167 /* BaseCoordinator.swift */; };
+		FD072D7E28A1A11300F7B167 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D7D28A1A11300F7B167 /* AuthManager.swift */; };
+		FD072D8028A1A5A300F7B167 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D7F28A1A5A300F7B167 /* LoginCoordinator.swift */; };
+		FD072D8228A1A82500F7B167 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D8128A1A82500F7B167 /* LoginViewController.swift */; };
+		FD072D8A28A1AF7500F7B167 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D8928A1AF7500F7B167 /* BaseViewController.swift */; };
+		FDE2708528A1B05F0039F04A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2708428A1B05F0039F04A /* RegisterViewController.swift */; };
+		FDE2708728A1B08F0039F04A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2708628A1B08F0039F04A /* DashboardViewController.swift */; };
+		FDE2708928A1B0970039F04A /* TradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2708828A1B0970039F04A /* TradeViewController.swift */; };
+		FDE2708B28A1B17F0039F04A /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2708A28A1B17F0039F04A /* RegisterCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		095C916A82F1724B89D3DF52 /* Pods-MVVMCDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMCDemo.debug.xcconfig"; path = "Target Support Files/Pods-MVVMCDemo/Pods-MVVMCDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		4E1EF2F088911A75A0EF6E42 /* Pods-MVVMCDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMCDemo.release.xcconfig"; path = "Target Support Files/Pods-MVVMCDemo/Pods-MVVMCDemo.release.xcconfig"; sourceTree = "<group>"; };
+		B1B2CB65EC0DD1411838FE41 /* Pods_MVVMCDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMCDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD072D0428A1836F00F7B167 /* MVVMCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD072D0728A1836F00F7B167 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FD072D0928A1836F00F7B167 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FD072D0B28A1836F00F7B167 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FD072D0E28A1836F00F7B167 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FD072D0B28A1836F00F7B167 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		FD072D1028A1837000F7B167 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD072D1328A1837000F7B167 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		FD072D1528A1837000F7B167 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD072D2128A1886700F7B167 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		FD072D6E28A19EA400F7B167 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		FD072D6F28A19EA400F7B167 /* NavigationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
+		FD072D7828A19F7200F7B167 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		FD072D7D28A1A11300F7B167 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		FD072D7F28A1A5A300F7B167 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		FD072D8128A1A82500F7B167 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FD072D8728A1AD3B00F7B167 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD072D8928A1AF7500F7B167 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		FDE2708428A1B05F0039F04A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		FDE2708628A1B08F0039F04A /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		FDE2708828A1B0970039F04A /* TradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeViewController.swift; sourceTree = "<group>"; };
+		FDE2708A28A1B17F0039F04A /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +55,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB9945D45449D3AA6FE00FEE /* Pods_MVVMCDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C063EDE60854B54F6EF4EA67 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				095C916A82F1724B89D3DF52 /* Pods-MVVMCDemo.debug.xcconfig */,
+				4E1EF2F088911A75A0EF6E42 /* Pods-MVVMCDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C7A3FA56CB640735BE218087 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B1B2CB65EC0DD1411838FE41 /* Pods_MVVMCDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FD072CFB28A1836F00F7B167 = {
 			isa = PBXGroup;
 			children = (
 				FD072D0628A1836F00F7B167 /* MVVMCDemo */,
 				FD072D0528A1836F00F7B167 /* Products */,
+				C063EDE60854B54F6EF4EA67 /* Pods */,
+				C7A3FA56CB640735BE218087 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +101,136 @@
 			isa = PBXGroup;
 			children = (
 				FD072D0728A1836F00F7B167 /* AppDelegate.swift */,
-				FD072D0928A1836F00F7B167 /* SceneDelegate.swift */,
-				FD072D0B28A1836F00F7B167 /* ViewController.swift */,
-				FD072D0D28A1836F00F7B167 /* Main.storyboard */,
-				FD072D1028A1837000F7B167 /* Assets.xcassets */,
 				FD072D1228A1837000F7B167 /* LaunchScreen.storyboard */,
-				FD072D1528A1837000F7B167 /* Info.plist */,
+				FD072D1D28A183A700F7B167 /* Coordinator */,
+				FD072D1E28A183AE00F7B167 /* UI */,
+				FD072D1C28A183A000F7B167 /* Repository */,
+				FD072D2328A19A5B00F7B167 /* Manager */,
+				FD072D1B28A1839800F7B167 /* UIComponent */,
+				FD072D1028A1837000F7B167 /* Assets.xcassets */,
+				FD072D8728A1AD3B00F7B167 /* Info.plist */,
 			);
 			path = MVVMCDemo;
+			sourceTree = "<group>";
+		};
+		FD072D1B28A1839800F7B167 /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				FD072D8928A1AF7500F7B167 /* BaseViewController.swift */,
+			);
+			path = UIComponent;
+			sourceTree = "<group>";
+		};
+		FD072D1C28A183A000F7B167 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		FD072D1D28A183A700F7B167 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FD072D2128A1886700F7B167 /* AppCoordinator.swift */,
+				FD072D7B28A1A00800F7B167 /* Login */,
+				FD072D7A28A19FF500F7B167 /* Register */,
+				FD072D7C28A1A00E00F7B167 /* Main */,
+				FD072D7528A19EAA00F7B167 /* Base */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		FD072D1E28A183AE00F7B167 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FD072D2428A19B6500F7B167 /* Login */,
+				FD072D2528A19B6C00F7B167 /* Register */,
+				FD072D2628A19B7200F7B167 /* Main */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		FD072D2328A19A5B00F7B167 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				FD072D7D28A1A11300F7B167 /* AuthManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		FD072D2428A19B6500F7B167 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FD072D8128A1A82500F7B167 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FD072D2528A19B6C00F7B167 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				FDE2708428A1B05F0039F04A /* RegisterViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		FD072D2628A19B7200F7B167 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FD072D0B28A1836F00F7B167 /* MainTabBarViewController.swift */,
+				FD072D2728A19B8B00F7B167 /* Dashboard */,
+				FD072D2828A19B9200F7B167 /* Trade */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FD072D2728A19B8B00F7B167 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				FDE2708628A1B08F0039F04A /* DashboardViewController.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		FD072D2828A19B9200F7B167 /* Trade */ = {
+			isa = PBXGroup;
+			children = (
+				FDE2708828A1B0970039F04A /* TradeViewController.swift */,
+			);
+			path = Trade;
+			sourceTree = "<group>";
+		};
+		FD072D7528A19EAA00F7B167 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				FD072D7828A19F7200F7B167 /* BaseCoordinator.swift */,
+				FD072D6E28A19EA400F7B167 /* Coordinator.swift */,
+				FD072D6F28A19EA400F7B167 /* NavigationRouter.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		FD072D7A28A19FF500F7B167 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				FDE2708A28A1B17F0039F04A /* RegisterCoordinator.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		FD072D7B28A1A00800F7B167 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FD072D7F28A1A5A300F7B167 /* LoginCoordinator.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FD072D7C28A1A00E00F7B167 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +240,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD072D1828A1837000F7B167 /* Build configuration list for PBXNativeTarget "MVVMCDemo" */;
 			buildPhases = (
+				C4BA67CF72153709DFD84279 /* [CP] Check Pods Manifest.lock */,
 				FD072D0028A1836F00F7B167 /* Sources */,
 				FD072D0128A1836F00F7B167 /* Frameworks */,
 				FD072D0228A1836F00F7B167 /* Resources */,
+				72FE1977C5638E89B0304A62 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,34 +295,78 @@
 			files = (
 				FD072D1428A1837000F7B167 /* LaunchScreen.storyboard in Resources */,
 				FD072D1128A1837000F7B167 /* Assets.xcassets in Resources */,
-				FD072D0F28A1836F00F7B167 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		72FE1977C5638E89B0304A62 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MVVMCDemo/Pods-MVVMCDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MVVMCDemo/Pods-MVVMCDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MVVMCDemo/Pods-MVVMCDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4BA67CF72153709DFD84279 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MVVMCDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FD072D0028A1836F00F7B167 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD072D0C28A1836F00F7B167 /* ViewController.swift in Sources */,
+				FD072D8228A1A82500F7B167 /* LoginViewController.swift in Sources */,
+				FDE2708528A1B05F0039F04A /* RegisterViewController.swift in Sources */,
+				FD072D2228A1886700F7B167 /* AppCoordinator.swift in Sources */,
+				FDE2708B28A1B17F0039F04A /* RegisterCoordinator.swift in Sources */,
+				FD072D7E28A1A11300F7B167 /* AuthManager.swift in Sources */,
+				FD072D0C28A1836F00F7B167 /* MainTabBarViewController.swift in Sources */,
+				FD072D7228A19EA400F7B167 /* Coordinator.swift in Sources */,
+				FD072D8A28A1AF7500F7B167 /* BaseViewController.swift in Sources */,
+				FDE2708728A1B08F0039F04A /* DashboardViewController.swift in Sources */,
 				FD072D0828A1836F00F7B167 /* AppDelegate.swift in Sources */,
-				FD072D0A28A1836F00F7B167 /* SceneDelegate.swift in Sources */,
+				FD072D7928A19F7200F7B167 /* BaseCoordinator.swift in Sources */,
+				FD072D8028A1A5A300F7B167 /* LoginCoordinator.swift in Sources */,
+				FD072D7328A19EA400F7B167 /* NavigationRouter.swift in Sources */,
+				FDE2708928A1B0970039F04A /* TradeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FD072D0D28A1836F00F7B167 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FD072D0E28A1836F00F7B167 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FD072D1228A1837000F7B167 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,6 +494,7 @@
 		};
 		FD072D1928A1837000F7B167 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 095C916A82F1724B89D3DF52 /* Pods-MVVMCDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -291,7 +504,7 @@
 				INFOPLIST_FILE = MVVMCDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -309,6 +522,7 @@
 		};
 		FD072D1A28A1837000F7B167 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E1EF2F088911A75A0EF6E42 /* Pods-MVVMCDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -318,7 +532,7 @@
 				INFOPLIST_FILE = MVVMCDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
