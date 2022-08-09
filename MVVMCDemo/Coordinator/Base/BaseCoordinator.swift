@@ -27,7 +27,7 @@ public class BaseCoordinator: Coordinator {
 
     public func push(_ viewController: UIViewController, animated: Bool) {
         router.push(viewController, animated: animated)
-        viewController.coordinator = self
+        viewController.coordinate = self
     }
 
     public func pop(animated: Bool) {
@@ -35,7 +35,7 @@ public class BaseCoordinator: Coordinator {
     }
 
     public func present(viewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
-        viewController.coordinator = self
+        viewController.coordinate = self
         navigater.present(viewController, animated: animated, completion: completion)
     }
 }

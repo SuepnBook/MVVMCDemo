@@ -9,7 +9,7 @@ import Foundation
 
 protocol LoginCoordinatorDelegate: AnyObject {
     func loginCoordinatorGotoRegister(_ coordinator:LoginCoordinator)
-    func LoginCoordinatorGotoMain(_ coordinator:LoginCoordinator)
+    func loginCoordinatorGotoMain(_ coordinator:LoginCoordinator)
 }
 
 class LoginCoordinator: BaseCoordinator {
@@ -20,6 +20,10 @@ class LoginCoordinator: BaseCoordinator {
         let rootVC = LoginViewController()
         rootVC.delegate = self
         push(rootVC, animated: true)
+    }
+    
+    deinit {
+        print("LoginCoordinator deinit")
     }
 }
 
@@ -41,6 +45,6 @@ extension LoginCoordinator: LoginViewControllerCoordinator {
 //MARK: - LoginViewControllerCoordinator
 extension LoginCoordinator: BiometricsCheckViewControllerCoordinator {
     func BiometricsCheckViewControllerDidSuccess(_ vc: BiometricsCheckViewController) {
-        delegate?.LoginCoordinatorGotoMain(self)
+        delegate?.loginCoordinatorGotoMain(self)
     }
 }

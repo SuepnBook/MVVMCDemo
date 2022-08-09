@@ -8,8 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		EB9945D45449D3AA6FE00FEE /* Pods_MVVMCDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B2CB65EC0DD1411838FE41 /* Pods_MVVMCDemo.framework */; };
+		FD00B37528A1FE2500DD90EC /* DashboardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00B37428A1FE2500DD90EC /* DashboardCoordinator.swift */; };
+		FD00B37728A1FE3E00DD90EC /* TradeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00B37628A1FE3E00DD90EC /* TradeCoordinator.swift */; };
+		FD00B37A28A1FF4C00DD90EC /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00B37928A1FF4C00DD90EC /* ProfileCoordinator.swift */; };
+		FD00B37D28A2004100DD90EC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00B37C28A2004100DD90EC /* ProfileViewController.swift */; };
+		FD00B37F28A204B700DD90EC /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00B37E28A204B700DD90EC /* ProfileViewModel.swift */; };
 		FD072D0828A1836F00F7B167 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D0728A1836F00F7B167 /* AppDelegate.swift */; };
-		FD072D0C28A1836F00F7B167 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D0B28A1836F00F7B167 /* MainTabBarViewController.swift */; };
+		FD072D0C28A1836F00F7B167 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D0B28A1836F00F7B167 /* MainTabBarController.swift */; };
 		FD072D1128A1837000F7B167 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD072D1028A1837000F7B167 /* Assets.xcassets */; };
 		FD072D1428A1837000F7B167 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD072D1228A1837000F7B167 /* LaunchScreen.storyboard */; };
 		FD072D2228A1886700F7B167 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D2128A1886700F7B167 /* AppCoordinator.swift */; };
@@ -40,9 +45,14 @@
 		095C916A82F1724B89D3DF52 /* Pods-MVVMCDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMCDemo.debug.xcconfig"; path = "Target Support Files/Pods-MVVMCDemo/Pods-MVVMCDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		4E1EF2F088911A75A0EF6E42 /* Pods-MVVMCDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMCDemo.release.xcconfig"; path = "Target Support Files/Pods-MVVMCDemo/Pods-MVVMCDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B1B2CB65EC0DD1411838FE41 /* Pods_MVVMCDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMCDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD00B37428A1FE2500DD90EC /* DashboardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCoordinator.swift; sourceTree = "<group>"; };
+		FD00B37628A1FE3E00DD90EC /* TradeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeCoordinator.swift; sourceTree = "<group>"; };
+		FD00B37928A1FF4C00DD90EC /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		FD00B37C28A2004100DD90EC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FD00B37E28A204B700DD90EC /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		FD072D0428A1836F00F7B167 /* MVVMCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD072D0728A1836F00F7B167 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FD072D0B28A1836F00F7B167 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		FD072D0B28A1836F00F7B167 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		FD072D1028A1837000F7B167 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD072D1328A1837000F7B167 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD072D2128A1886700F7B167 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -97,6 +107,39 @@
 				B1B2CB65EC0DD1411838FE41 /* Pods_MVVMCDemo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD00B37228A1FE0200DD90EC /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				FD00B37428A1FE2500DD90EC /* DashboardCoordinator.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		FD00B37328A1FE1100DD90EC /* Trade */ = {
+			isa = PBXGroup;
+			children = (
+				FD00B37628A1FE3E00DD90EC /* TradeCoordinator.swift */,
+			);
+			path = Trade;
+			sourceTree = "<group>";
+		};
+		FD00B37828A1FF3D00DD90EC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FD00B37928A1FF4C00DD90EC /* ProfileCoordinator.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		FD00B37B28A2003100DD90EC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FD00B37C28A2004100DD90EC /* ProfileViewController.swift */,
+				FD00B37E28A204B700DD90EC /* ProfileViewModel.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		FD072CFB28A1836F00F7B167 = {
@@ -197,9 +240,9 @@
 		FD072D2628A19B7200F7B167 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				FD072D0B28A1836F00F7B167 /* MainTabBarViewController.swift */,
 				FD072D2728A19B8B00F7B167 /* Dashboard */,
 				FD072D2828A19B9200F7B167 /* Trade */,
+				FD00B37B28A2003100DD90EC /* Profile */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -249,6 +292,10 @@
 		FD072D7C28A1A00E00F7B167 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FD072D0B28A1836F00F7B167 /* MainTabBarController.swift */,
+				FD00B37228A1FE0200DD90EC /* Dashboard */,
+				FD00B37328A1FE1100DD90EC /* Trade */,
+				FD00B37828A1FF3D00DD90EC /* Profile */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -427,19 +474,24 @@
 			files = (
 				FDE2713F28A1F0DE0039F04A /* AccountRepository.swift in Sources */,
 				FD072D8228A1A82500F7B167 /* LoginViewController.swift in Sources */,
+				FD00B37F28A204B700DD90EC /* ProfileViewModel.swift in Sources */,
 				FDE2708528A1B05F0039F04A /* RegisterViewController.swift in Sources */,
 				FDE2713828A1EFF40039F04A /* AuthRepository.swift in Sources */,
 				FD072D2228A1886700F7B167 /* AppCoordinator.swift in Sources */,
+				FD00B37728A1FE3E00DD90EC /* TradeCoordinator.swift in Sources */,
 				FDE2708B28A1B17F0039F04A /* RegisterCoordinator.swift in Sources */,
-				FD072D0C28A1836F00F7B167 /* MainTabBarViewController.swift in Sources */,
+				FD072D0C28A1836F00F7B167 /* MainTabBarController.swift in Sources */,
 				FD072D7228A19EA400F7B167 /* Coordinator.swift in Sources */,
 				FDE2713B28A1F04C0039F04A /* AccountDomainObject.swift in Sources */,
 				FD072D8A28A1AF7500F7B167 /* BaseViewController.swift in Sources */,
 				FDE2713528A1EE810039F04A /* LoginViewModel.swift in Sources */,
+				FD00B37528A1FE2500DD90EC /* DashboardCoordinator.swift in Sources */,
 				FDE2708728A1B08F0039F04A /* DashboardViewController.swift in Sources */,
 				FD072D0828A1836F00F7B167 /* AppDelegate.swift in Sources */,
 				FD072D7928A19F7200F7B167 /* BaseCoordinator.swift in Sources */,
+				FD00B37A28A1FF4C00DD90EC /* ProfileCoordinator.swift in Sources */,
 				FD072D8028A1A5A300F7B167 /* LoginCoordinator.swift in Sources */,
+				FD00B37D28A2004100DD90EC /* ProfileViewController.swift in Sources */,
 				FDE2713328A1EE260039F04A /* UIControlExtension.swift in Sources */,
 				FDE2714128A1F1280039F04A /* LocalStorageClient.swift in Sources */,
 				FDE2713028A1EBA90039F04A /* BiometricsCheckViewController.swift in Sources */,

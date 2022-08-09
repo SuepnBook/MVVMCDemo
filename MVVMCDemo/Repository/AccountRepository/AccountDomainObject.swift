@@ -8,7 +8,7 @@
 import Foundation
 
 struct AccountDomainObject {
-    struct Porfile {
+    struct Profile {
         var userID:String
         var name:String
         var age:Int

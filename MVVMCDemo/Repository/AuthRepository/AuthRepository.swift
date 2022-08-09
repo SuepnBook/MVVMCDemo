@@ -19,7 +19,7 @@ extension AuthRepository {
 //MARK: - Read
 extension AuthRepository {
     func getAuthStatus() -> AuthDomainObject.AuthStatus {
-        return .login
+        return .logout
     }
     
     func isNeedBiometricsCheck() -> Bool {

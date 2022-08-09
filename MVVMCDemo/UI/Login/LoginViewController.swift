@@ -25,7 +25,16 @@ class LoginViewController: BaseViewController {
     
     private let loginButton:UIButton = {
         let button = UIButton()
-        button.setTitle("Login", for: .normal)
+//        button.backgroundColor = .yellow
+//        button.setTitle("Login", for: .normal)
+//        button.setTitleColor(.black, for: .normal)
+        return button
+    }()
+    
+    private let registerButton:UIButton = {
+        let button = UIButton()
+//        button.setTitle("Register", for: .normal)
+//        button.setTitleColor(.yellow, for: .normal)
         return button
     }()
     
@@ -38,6 +47,7 @@ class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
+        setupReaction()
     }
 }
 
@@ -45,9 +55,38 @@ class LoginViewController: BaseViewController {
 extension LoginViewController {
     func initView() {
         view.addSubview(imageView)
+        view.addSubview(loginButton)
+        view.addSubview(registerButton)
         
         imageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+        
+        loginButton.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(24)
+            make.height.equalTo(64)
+            make.centerY.equalTo(460)
+        }
+        
+        registerButton.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().inset(74)
+            make.width.equalTo(48)
+            make.leading.equalToSuperview().inset(32)
+        }
+    }
+    
+    func setupReaction() {
+        loginButton.addAction { [weak self] in
+            guard let self = self else { return }
+            let userName = "dsajik"
+            let password = "dsamdilsa"
+            self.viewModel.checkLogin(userName: userName,
+                                      password: password)
+        }
+        
+        registerButton.addAction { [weak self] in
+            guard let self = self else { return }
+            self.delegate?.loginViewControllerTapRegister(self)
         }
     }
 

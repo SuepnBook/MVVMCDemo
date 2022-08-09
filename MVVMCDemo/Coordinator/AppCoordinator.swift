@@ -23,6 +23,7 @@ final class AppCoordinator {
     
     private var loginCoordinator:LoginCoordinator?
     private var registerCoordinator:RegisterCoordinator?
+    private var mainCoordinator:MainTabBarController?
     
     init(window: UIWindow?) {
         self.window = window
@@ -53,6 +54,7 @@ final class AppCoordinator {
 extension AppCoordinator {
     
     private func showLoginFlow() {
+        clearAllCoordinator()
         self.loginCoordinator = LoginCoordinator()
         loginCoordinator?.delegate = self
         loginCoordinator?.start()
@@ -60,14 +62,18 @@ extension AppCoordinator {
     }
     
     private func showRegisterFlow() {
+        clearAllCoordinator()
         self.registerCoordinator = RegisterCoordinator()
+        registerCoordinator?.delegate = self
         setRootModule(registerCoordinator?.navigater)
         registerCoordinator?.start()
     }
     
     private func showMainFlow() {
-        
-//        setRootModule(registerCoordinator?.navigater)
+        clearAllCoordinator()
+        self.mainCoordinator = MainTabBarController()
+        mainCoordinator?.coordinator = self
+        setRootModule(mainCoordinator)
     }
     
     private func setRootModule(_ controller: UIViewController?) {
@@ -79,16 +85,36 @@ extension AppCoordinator {
     private func clearAllCoordinator() {
         self.loginCoordinator = nil
         self.registerCoordinator = nil
+        self.mainCoordinator = nil
     }
 }
 
 //MARK: - LoginCoordinatorDelegate
 extension AppCoordinator: LoginCoordinatorDelegate {
     func loginCoordinatorGotoRegister(_ coordinator: LoginCoordinator) {
+        showRegisterFlow()
+    }
+    
+    func loginCoordinatorGotoMain(_ coordinator: LoginCoordinator) {
+        showMainFlow()
+    }
+}
+
+//MARK: - RegisterCoordinatorDelegate
+extension AppCoordinator: RegisterCoordinatorDelegate {
+    func RegisterCoordinatorGotoMain(_ coordinator: RegisterCoordinator) {
         showMainFlow()
     }
     
-    func LoginCoordinatorGotoMain(_ coordinator: LoginCoordinator) {
-        
+    func RegisterCoordinatorGotoLogin(_ coordinator: RegisterCoordinator) {
+        showLoginFlow()
+    }
+    
+}
+
+//MARK: - MainTabBarControllerDelegate
+extension AppCoordinator: MainTabBarControllerDelegate {
+    func mainTabBarControllerLogout(_ mainTabBar: MainTabBarController) {
+        showLoginFlow()
     }
 }

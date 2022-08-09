@@ -32,11 +32,11 @@ extension NavigationRouter: UINavigationControllerDelegate {
     public func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         guard let dismissedVieController = navigationController.transitionCoordinator?.viewController(forKey: .from),
               !navigationController.viewControllers.contains(dismissedVieController),
-              let dismissedCoordinator = dismissedVieController.coordinator else {
+              let dismissedCoordinator = dismissedVieController.coordinate else {
             return
         }
 
-        viewController.coordinator?.removeChild(child: dismissedCoordinator)
+        viewController.coordinate?.removeChild(child: dismissedCoordinator)
     }
 }
 
@@ -45,7 +45,7 @@ extension UIViewController {
         static var ownerKey: UInt = 0
     }
 
-    weak var coordinator: Coordinator? {
+    weak var coordinate: Coordinator? {
         get {
             objc_getAssociatedObject(self, &CoordinatorAssociatedKeys.ownerKey) as? Coordinator
         }

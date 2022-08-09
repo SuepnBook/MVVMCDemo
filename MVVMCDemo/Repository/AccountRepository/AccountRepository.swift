@@ -18,7 +18,7 @@ extension AccountRepository {
 
 //MARK: - Read
 extension AccountRepository {
-    func getUserProfile() -> AccountDomainObject.Porfile {
+    func getUserProfile() -> AccountDomainObject.Profile {
         let userID = LocalStorageClient.getUserID()
         let name = NetworkClient.getUserName(userID: userID)
         let age = NetworkClient.getUserAge(userID: userID)
