@@ -29,7 +29,7 @@ final class AppCoordinator {
     }
     
     func start() {
-        switch AuthMangager.shared.getAuthStatus() {
+        switch AuthRepository.shared.getAuthStatus() {
         case .login:
             showLoginFlow()
         case .logout:
@@ -54,8 +54,9 @@ extension AppCoordinator {
     
     private func showLoginFlow() {
         self.loginCoordinator = LoginCoordinator()
-        setRootModule(loginCoordinator?.navigater)
+        loginCoordinator?.delegate = self
         loginCoordinator?.start()
+        setRootModule(loginCoordinator?.navigater)
     }
     
     private func showRegisterFlow() {
@@ -64,9 +65,30 @@ extension AppCoordinator {
         registerCoordinator?.start()
     }
     
+    private func showMainFlow() {
+        
+//        setRootModule(registerCoordinator?.navigater)
+    }
+    
     private func setRootModule(_ controller: UIViewController?) {
         guard let window = window else { return }
         window.rootViewController = controller
         UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil, completion: nil)
+    }
+    
+    private func clearAllCoordinator() {
+        self.loginCoordinator = nil
+        self.registerCoordinator = nil
+    }
+}
+
+//MARK: - LoginCoordinatorDelegate
+extension AppCoordinator: LoginCoordinatorDelegate {
+    func loginCoordinatorGotoRegister(_ coordinator: LoginCoordinator) {
+        showMainFlow()
+    }
+    
+    func LoginCoordinatorGotoMain(_ coordinator: LoginCoordinator) {
+        
     }
 }

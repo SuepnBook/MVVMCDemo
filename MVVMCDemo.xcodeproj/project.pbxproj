@@ -16,7 +16,6 @@
 		FD072D7228A19EA400F7B167 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D6E28A19EA400F7B167 /* Coordinator.swift */; };
 		FD072D7328A19EA400F7B167 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D6F28A19EA400F7B167 /* NavigationRouter.swift */; };
 		FD072D7928A19F7200F7B167 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D7828A19F7200F7B167 /* BaseCoordinator.swift */; };
-		FD072D7E28A1A11300F7B167 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D7D28A1A11300F7B167 /* AuthManager.swift */; };
 		FD072D8028A1A5A300F7B167 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D7F28A1A5A300F7B167 /* LoginCoordinator.swift */; };
 		FD072D8228A1A82500F7B167 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D8128A1A82500F7B167 /* LoginViewController.swift */; };
 		FD072D8A28A1AF7500F7B167 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D8928A1AF7500F7B167 /* BaseViewController.swift */; };
@@ -24,6 +23,17 @@
 		FDE2708728A1B08F0039F04A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2708628A1B08F0039F04A /* DashboardViewController.swift */; };
 		FDE2708928A1B0970039F04A /* TradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2708828A1B0970039F04A /* TradeViewController.swift */; };
 		FDE2708B28A1B17F0039F04A /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2708A28A1B17F0039F04A /* RegisterCoordinator.swift */; };
+		FDE2712D28A1E74A0039F04A /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2712C28A1E74A0039F04A /* BaseTableViewCell.swift */; };
+		FDE2713028A1EBA90039F04A /* BiometricsCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2712F28A1EBA90039F04A /* BiometricsCheckViewController.swift */; };
+		FDE2713328A1EE260039F04A /* UIControlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2713228A1EE260039F04A /* UIControlExtension.swift */; };
+		FDE2713528A1EE810039F04A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2713428A1EE810039F04A /* LoginViewModel.swift */; };
+		FDE2713828A1EFF40039F04A /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2713728A1EFF40039F04A /* AuthRepository.swift */; };
+		FDE2713B28A1F04C0039F04A /* AccountDomainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2713A28A1F04C0039F04A /* AccountDomainObject.swift */; };
+		FDE2713D28A1F0A80039F04A /* AuthDomainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2713C28A1F0A80039F04A /* AuthDomainObject.swift */; };
+		FDE2713F28A1F0DE0039F04A /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2713E28A1F0DE0039F04A /* AccountRepository.swift */; };
+		FDE2714128A1F1280039F04A /* LocalStorageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2714028A1F1280039F04A /* LocalStorageClient.swift */; };
+		FDE2714328A1F1B70039F04A /* MQTTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2714228A1F1B70039F04A /* MQTTClient.swift */; };
+		FDE2714528A1F1CC0039F04A /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2714428A1F1CC0039F04A /* NetworkClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +49,6 @@
 		FD072D6E28A19EA400F7B167 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		FD072D6F28A19EA400F7B167 /* NavigationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		FD072D7828A19F7200F7B167 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
-		FD072D7D28A1A11300F7B167 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		FD072D7F28A1A5A300F7B167 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		FD072D8128A1A82500F7B167 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FD072D8728A1AD3B00F7B167 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,6 +57,17 @@
 		FDE2708628A1B08F0039F04A /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		FDE2708828A1B0970039F04A /* TradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeViewController.swift; sourceTree = "<group>"; };
 		FDE2708A28A1B17F0039F04A /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
+		FDE2712C28A1E74A0039F04A /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		FDE2712F28A1EBA90039F04A /* BiometricsCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricsCheckViewController.swift; sourceTree = "<group>"; };
+		FDE2713228A1EE260039F04A /* UIControlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControlExtension.swift; sourceTree = "<group>"; };
+		FDE2713428A1EE810039F04A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		FDE2713728A1EFF40039F04A /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		FDE2713A28A1F04C0039F04A /* AccountDomainObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDomainObject.swift; sourceTree = "<group>"; };
+		FDE2713C28A1F0A80039F04A /* AuthDomainObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDomainObject.swift; sourceTree = "<group>"; };
+		FDE2713E28A1F0DE0039F04A /* AccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepository.swift; sourceTree = "<group>"; };
+		FDE2714028A1F1280039F04A /* LocalStorageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageClient.swift; sourceTree = "<group>"; };
+		FDE2714228A1F1B70039F04A /* MQTTClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTClient.swift; sourceTree = "<group>"; };
+		FDE2714428A1F1CC0039F04A /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +125,8 @@
 				FD072D1D28A183A700F7B167 /* Coordinator */,
 				FD072D1E28A183AE00F7B167 /* UI */,
 				FD072D1C28A183A000F7B167 /* Repository */,
-				FD072D2328A19A5B00F7B167 /* Manager */,
 				FD072D1B28A1839800F7B167 /* UIComponent */,
+				FDE2713128A1EE140039F04A /* Extension */,
 				FD072D1028A1837000F7B167 /* Assets.xcassets */,
 				FD072D8728A1AD3B00F7B167 /* Info.plist */,
 			);
@@ -117,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				FD072D8928A1AF7500F7B167 /* BaseViewController.swift */,
+				FDE2712C28A1E74A0039F04A /* BaseTableViewCell.swift */,
 			);
 			path = UIComponent;
 			sourceTree = "<group>";
@@ -124,6 +145,11 @@
 		FD072D1C28A183A000F7B167 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				FDE2713628A1EFE10039F04A /* AuthRepository */,
+				FDE2713928A1F0370039F04A /* AccountRepository */,
+				FDE2708F28A1B2E60039F04A /* LocalStorage */,
+				FDE2708D28A1B2DA0039F04A /* MQTT */,
+				FDE2708C28A1B2D60039F04A /* Network */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -150,18 +176,12 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		FD072D2328A19A5B00F7B167 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				FD072D7D28A1A11300F7B167 /* AuthManager.swift */,
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
 		FD072D2428A19B6500F7B167 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				FD072D8128A1A82500F7B167 /* LoginViewController.swift */,
+				FDE2713428A1EE810039F04A /* LoginViewModel.swift */,
+				FDE2712E28A1EB8C0039F04A /* BiometricsCheck */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -231,6 +251,64 @@
 			children = (
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		FDE2708C28A1B2D60039F04A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FDE2714428A1F1CC0039F04A /* NetworkClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FDE2708D28A1B2DA0039F04A /* MQTT */ = {
+			isa = PBXGroup;
+			children = (
+				FDE2714228A1F1B70039F04A /* MQTTClient.swift */,
+			);
+			path = MQTT;
+			sourceTree = "<group>";
+		};
+		FDE2708F28A1B2E60039F04A /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				FDE2714028A1F1280039F04A /* LocalStorageClient.swift */,
+			);
+			path = LocalStorage;
+			sourceTree = "<group>";
+		};
+		FDE2712E28A1EB8C0039F04A /* BiometricsCheck */ = {
+			isa = PBXGroup;
+			children = (
+				FDE2712F28A1EBA90039F04A /* BiometricsCheckViewController.swift */,
+			);
+			path = BiometricsCheck;
+			sourceTree = "<group>";
+		};
+		FDE2713128A1EE140039F04A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FDE2713228A1EE260039F04A /* UIControlExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FDE2713628A1EFE10039F04A /* AuthRepository */ = {
+			isa = PBXGroup;
+			children = (
+				FDE2713C28A1F0A80039F04A /* AuthDomainObject.swift */,
+				FDE2713728A1EFF40039F04A /* AuthRepository.swift */,
+			);
+			path = AuthRepository;
+			sourceTree = "<group>";
+		};
+		FDE2713928A1F0370039F04A /* AccountRepository */ = {
+			isa = PBXGroup;
+			children = (
+				FDE2713A28A1F04C0039F04A /* AccountDomainObject.swift */,
+				FDE2713E28A1F0DE0039F04A /* AccountRepository.swift */,
+			);
+			path = AccountRepository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,20 +425,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDE2713F28A1F0DE0039F04A /* AccountRepository.swift in Sources */,
 				FD072D8228A1A82500F7B167 /* LoginViewController.swift in Sources */,
 				FDE2708528A1B05F0039F04A /* RegisterViewController.swift in Sources */,
+				FDE2713828A1EFF40039F04A /* AuthRepository.swift in Sources */,
 				FD072D2228A1886700F7B167 /* AppCoordinator.swift in Sources */,
 				FDE2708B28A1B17F0039F04A /* RegisterCoordinator.swift in Sources */,
-				FD072D7E28A1A11300F7B167 /* AuthManager.swift in Sources */,
 				FD072D0C28A1836F00F7B167 /* MainTabBarViewController.swift in Sources */,
 				FD072D7228A19EA400F7B167 /* Coordinator.swift in Sources */,
+				FDE2713B28A1F04C0039F04A /* AccountDomainObject.swift in Sources */,
 				FD072D8A28A1AF7500F7B167 /* BaseViewController.swift in Sources */,
+				FDE2713528A1EE810039F04A /* LoginViewModel.swift in Sources */,
 				FDE2708728A1B08F0039F04A /* DashboardViewController.swift in Sources */,
 				FD072D0828A1836F00F7B167 /* AppDelegate.swift in Sources */,
 				FD072D7928A19F7200F7B167 /* BaseCoordinator.swift in Sources */,
 				FD072D8028A1A5A300F7B167 /* LoginCoordinator.swift in Sources */,
+				FDE2713328A1EE260039F04A /* UIControlExtension.swift in Sources */,
+				FDE2714128A1F1280039F04A /* LocalStorageClient.swift in Sources */,
+				FDE2713028A1EBA90039F04A /* BiometricsCheckViewController.swift in Sources */,
+				FDE2714328A1F1B70039F04A /* MQTTClient.swift in Sources */,
 				FD072D7328A19EA400F7B167 /* NavigationRouter.swift in Sources */,
+				FDE2712D28A1E74A0039F04A /* BaseTableViewCell.swift in Sources */,
+				FDE2713D28A1F0A80039F04A /* AuthDomainObject.swift in Sources */,
 				FDE2708928A1B0970039F04A /* TradeViewController.swift in Sources */,
+				FDE2714528A1F1CC0039F04A /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
