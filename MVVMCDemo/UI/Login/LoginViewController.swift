@@ -25,16 +25,11 @@ class LoginViewController: BaseViewController {
     
     private let loginButton:UIButton = {
         let button = UIButton()
-//        button.backgroundColor = .yellow
-//        button.setTitle("Login", for: .normal)
-//        button.setTitleColor(.black, for: .normal)
         return button
     }()
     
     private let registerButton:UIButton = {
         let button = UIButton()
-//        button.setTitle("Register", for: .normal)
-//        button.setTitleColor(.yellow, for: .normal)
         return button
     }()
     

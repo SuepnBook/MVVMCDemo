@@ -27,3 +27,8 @@ class ProfileViewModel {
         output?.profileViewModel(self, update: profile)
     }
 }
+ 
+//MARK: - Private Function
+extension ProfileViewModel {
+    
+}

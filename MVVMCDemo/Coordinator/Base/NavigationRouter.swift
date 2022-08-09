@@ -9,7 +9,7 @@ import UIKit
 
 public class NavigationRouter: NSObject {
     
-    public let navigationController: UINavigationController
+    public var navigationController: UINavigationController
 
     public init(navigationController: UINavigationController = UINavigationController()) {
         self.navigationController = navigationController
@@ -35,8 +35,13 @@ extension NavigationRouter: UINavigationControllerDelegate {
               let dismissedCoordinator = dismissedVieController.coordinate else {
             return
         }
-
-        viewController.coordinate?.removeChild(child: dismissedCoordinator)
+        
+        if let coordinate = dismissedVieController.coordinate,
+           let startVC = coordinate.startViewController,
+           startVC == dismissedVieController,
+           let parent = coordinate.parent{
+            parent.removeChild(child: dismissedCoordinator)
+        }
     }
 }
 
@@ -44,7 +49,7 @@ extension UIViewController {
     private enum CoordinatorAssociatedKeys {
         static var ownerKey: UInt = 0
     }
-
+    
     weak var coordinate: Coordinator? {
         get {
             objc_getAssociatedObject(self, &CoordinatorAssociatedKeys.ownerKey) as? Coordinator

@@ -34,4 +34,10 @@ extension ProfileCoordinator: ProfileViewControllerCoordinator {
     func profileViewControllerTapLogout(_ vc: ProfileViewController) {
         delegate?.ProfileCoordinatorTapLogout(self)
     }
+    
+    func profileViewControllerStartAFlow(_ vc: ProfileViewController) {
+        let child = ProfileACoordinator(router: router)
+        addChild(child)
+        child.start()
+    }
 }

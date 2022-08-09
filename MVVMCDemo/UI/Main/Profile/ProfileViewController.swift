@@ -8,25 +8,26 @@
 import UIKit
 
 protocol ProfileViewControllerCoordinator: AnyObject {
-    func profileViewControllerTapLogout(_ vc:ProfileViewController)
+    func profileViewControllerTapLogout(_ vc: ProfileViewController)
+    func profileViewControllerStartAFlow(_ vc: ProfileViewController)
 }
  
 class ProfileViewController: BaseViewController {
     
-    weak var delegate:ProfileViewControllerCoordinator?
+    weak var delegate: ProfileViewControllerCoordinator?
     
-    private let stackView:UIStackView = {
+    private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         return stackView
     }()
     
-    private let userNameLabel:UILabel = {
+    private let userNameLabel: UILabel = {
         let label = UILabel()
         return label
     }()
     
-    private let ageLabel:UILabel = {
+    private let ageLabel: UILabel = {
         let label = UILabel()
         return label
     }()
@@ -35,6 +36,14 @@ class ProfileViewController: BaseViewController {
         let button = UIButton()
         button.backgroundColor = .yellow
         button.setTitle("Logout", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        return button
+    }()
+    
+    private let profileAFlowButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .blue
+        button.setTitle("Start Profile A Flow", for: .normal)
         return button
     }()
     
@@ -61,6 +70,7 @@ extension ProfileViewController {
         stackView.addArrangedSubview(userNameLabel)
         stackView.addArrangedSubview(ageLabel)
         stackView.addArrangedSubview(logoutButton)
+        stackView.addArrangedSubview(profileAFlowButton)
         
         stackView.snp.makeConstraints { make in
             make.center.equalToSuperview()
@@ -71,6 +81,11 @@ extension ProfileViewController {
         logoutButton.addAction { [weak self] in
             guard let self = self else { return }
             self.delegate?.profileViewControllerTapLogout(self)
+        }
+        
+        profileAFlowButton.addAction { [weak self] in
+            guard let self = self else { return }
+            self.delegate?.profileViewControllerStartAFlow(self)
         }
     }
 }
