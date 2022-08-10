@@ -26,22 +26,24 @@ public class NavigationRouter: NSObject {
     public func pop(animated: Bool) {
         navigationController.popViewController(animated: animated)
     }
+    
+    public func popToViewController(viewController: UIViewController, animated: Bool) {
+        navigationController.popToViewController(viewController, animated: animated)
+    }
 }
 
 extension NavigationRouter: UINavigationControllerDelegate {
     public func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         guard let dismissedVieController = navigationController.transitionCoordinator?.viewController(forKey: .from),
-              !navigationController.viewControllers.contains(dismissedVieController),
-              let dismissedCoordinator = dismissedVieController.coordinate else {
+              !navigationController.viewControllers.contains(dismissedVieController) else {
             return
         }
         
-        if let coordinate = dismissedVieController.coordinate,
-           let startVC = coordinate.startViewController,
-           startVC == dismissedVieController,
-           let parent = coordinate.parent{
-            parent.removeChild(child: dismissedCoordinator)
-        }
+//        if let dismissedCoordinator = dismissedVieController.coordinate,
+//           let startVC = dismissedCoordinator.startViewController,
+//           startVC == dismissedVieController {
+//            dismissedCoordinator.removeFromParent()
+//        }
     }
 }
 
@@ -50,9 +52,9 @@ extension UIViewController {
         static var ownerKey: UInt = 0
     }
     
-    weak var coordinate: Coordinator? {
+    weak var coordinate: Coordinatable? {
         get {
-            objc_getAssociatedObject(self, &CoordinatorAssociatedKeys.ownerKey) as? Coordinator
+            objc_getAssociatedObject(self, &CoordinatorAssociatedKeys.ownerKey) as? Coordinatable
         }
 
         set {

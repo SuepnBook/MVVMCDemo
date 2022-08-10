@@ -14,9 +14,7 @@
 		FD00B37D28A2004100DD90EC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00B37C28A2004100DD90EC /* ProfileViewController.swift */; };
 		FD00B37F28A204B700DD90EC /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00B37E28A204B700DD90EC /* ProfileViewModel.swift */; };
 		FD00B38628A20FAE00DD90EC /* ProfileACoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00B38528A20FAE00DD90EC /* ProfileACoordinator.swift */; };
-		FD00B38828A20FD500DD90EC /* ProfileAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00B38728A20FD500DD90EC /* ProfileAViewController.swift */; };
-		FD00B38A28A20FDE00DD90EC /* ProfileBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00B38928A20FDE00DD90EC /* ProfileBViewController.swift */; };
-		FD00B38C28A20FE700DD90EC /* ProfileCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00B38B28A20FE700DD90EC /* ProfileCViewController.swift */; };
+		FD00B38828A20FD500DD90EC /* CustomFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00B38728A20FD500DD90EC /* CustomFlowViewController.swift */; };
 		FD00B38E28A2256B00DD90EC /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00B38D28A2256B00DD90EC /* DashboardViewModel.swift */; };
 		FD00B39128A22BDC00DD90EC /* TrasactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00B39028A22BDC00DD90EC /* TrasactionTableViewCell.swift */; };
 		FD072D0828A1836F00F7B167 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D0728A1836F00F7B167 /* AppDelegate.swift */; };
@@ -56,9 +54,7 @@
 		FD00B37C28A2004100DD90EC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FD00B37E28A204B700DD90EC /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		FD00B38528A20FAE00DD90EC /* ProfileACoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileACoordinator.swift; sourceTree = "<group>"; };
-		FD00B38728A20FD500DD90EC /* ProfileAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAViewController.swift; sourceTree = "<group>"; };
-		FD00B38928A20FDE00DD90EC /* ProfileBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBViewController.swift; sourceTree = "<group>"; };
-		FD00B38B28A20FE700DD90EC /* ProfileCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCViewController.swift; sourceTree = "<group>"; };
+		FD00B38728A20FD500DD90EC /* CustomFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowViewController.swift; sourceTree = "<group>"; };
 		FD00B38D28A2256B00DD90EC /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		FD00B39028A22BDC00DD90EC /* TrasactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrasactionTableViewCell.swift; sourceTree = "<group>"; };
 		FD072D0428A1836F00F7B167 /* MVVMCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,43 +145,17 @@
 			children = (
 				FD00B37C28A2004100DD90EC /* ProfileViewController.swift */,
 				FD00B37E28A204B700DD90EC /* ProfileViewModel.swift */,
-				FD00B38028A20F5F00DD90EC /* ProfileAFlow */,
+				FD00B38128A20F7300DD90EC /* CustomFlow */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		FD00B38028A20F5F00DD90EC /* ProfileAFlow */ = {
+		FD00B38128A20F7300DD90EC /* CustomFlow */ = {
 			isa = PBXGroup;
 			children = (
-				FD00B38128A20F7300DD90EC /* ProfileA */,
-				FD00B38228A20F7A00DD90EC /* ProfileB */,
-				FD00B38328A20F8100DD90EC /* ProfileC */,
+				FD00B38728A20FD500DD90EC /* CustomFlowViewController.swift */,
 			);
-			path = ProfileAFlow;
-			sourceTree = "<group>";
-		};
-		FD00B38128A20F7300DD90EC /* ProfileA */ = {
-			isa = PBXGroup;
-			children = (
-				FD00B38728A20FD500DD90EC /* ProfileAViewController.swift */,
-			);
-			path = ProfileA;
-			sourceTree = "<group>";
-		};
-		FD00B38228A20F7A00DD90EC /* ProfileB */ = {
-			isa = PBXGroup;
-			children = (
-				FD00B38928A20FDE00DD90EC /* ProfileBViewController.swift */,
-			);
-			path = ProfileB;
-			sourceTree = "<group>";
-		};
-		FD00B38328A20F8100DD90EC /* ProfileC */ = {
-			isa = PBXGroup;
-			children = (
-				FD00B38B28A20FE700DD90EC /* ProfileCViewController.swift */,
-			);
-			path = ProfileC;
+			path = CustomFlow;
 			sourceTree = "<group>";
 		};
 		FD00B38428A20F9400DD90EC /* ProfileA */ = {
@@ -208,6 +178,14 @@
 			isa = PBXGroup;
 			children = (
 				FD072D7F28A1A5A300F7B167 /* LoginCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		FD00B42F28A3BCA700DD90EC /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FDE2708A28A1B17F0039F04A /* RegisterCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -271,8 +249,6 @@
 			isa = PBXGroup;
 			children = (
 				FD072D2128A1886700F7B167 /* AppCoordinator.swift */,
-				FD072D7B28A1A00800F7B167 /* Login */,
-				FD072D7A28A19FF500F7B167 /* Register */,
 				FD072D7C28A1A00E00F7B167 /* Main */,
 				FD072D7528A19EAA00F7B167 /* Base */,
 			);
@@ -292,10 +268,10 @@
 		FD072D2428A19B6500F7B167 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				FD00B42E28A25AFA00DD90EC /* Coordinator */,
 				FD072D8128A1A82500F7B167 /* LoginViewController.swift */,
 				FDE2713428A1EE810039F04A /* LoginViewModel.swift */,
 				FDE2712E28A1EB8C0039F04A /* BiometricsCheck */,
+				FD00B42E28A25AFA00DD90EC /* Coordinator */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -304,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				FDE2708428A1B05F0039F04A /* RegisterViewController.swift */,
+				FD00B42F28A3BCA700DD90EC /* Coordinator */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -311,6 +288,7 @@
 		FD072D2628A19B7200F7B167 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FD072D0B28A1836F00F7B167 /* MainTabBarController.swift */,
 				FD072D2728A19B8B00F7B167 /* Dashboard */,
 				FD072D2828A19B9200F7B167 /* Trade */,
 				FD00B37B28A2003100DD90EC /* Profile */,
@@ -345,25 +323,9 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		FD072D7A28A19FF500F7B167 /* Register */ = {
-			isa = PBXGroup;
-			children = (
-				FDE2708A28A1B17F0039F04A /* RegisterCoordinator.swift */,
-			);
-			path = Register;
-			sourceTree = "<group>";
-		};
-		FD072D7B28A1A00800F7B167 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
 		FD072D7C28A1A00E00F7B167 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				FD072D0B28A1836F00F7B167 /* MainTabBarController.swift */,
 				FD00B37228A1FE0200DD90EC /* Dashboard */,
 				FD00B37328A1FE1100DD90EC /* Trade */,
 				FD00B37828A1FF3D00DD90EC /* Profile */,
@@ -552,7 +514,6 @@
 				FD00B37728A1FE3E00DD90EC /* TradeCoordinator.swift in Sources */,
 				FDE2708B28A1B17F0039F04A /* RegisterCoordinator.swift in Sources */,
 				FD072D0C28A1836F00F7B167 /* MainTabBarController.swift in Sources */,
-				FD00B38A28A20FDE00DD90EC /* ProfileBViewController.swift in Sources */,
 				FD00B38628A20FAE00DD90EC /* ProfileACoordinator.swift in Sources */,
 				FDE2713B28A1F04C0039F04A /* AccountDomainObject.swift in Sources */,
 				FD072D8A28A1AF7500F7B167 /* BaseViewController.swift in Sources */,
@@ -561,7 +522,7 @@
 				FD00B38E28A2256B00DD90EC /* DashboardViewModel.swift in Sources */,
 				FDE2708728A1B08F0039F04A /* DashboardViewController.swift in Sources */,
 				FD072D0828A1836F00F7B167 /* AppDelegate.swift in Sources */,
-				FD00B38828A20FD500DD90EC /* ProfileAViewController.swift in Sources */,
+				FD00B38828A20FD500DD90EC /* CustomFlowViewController.swift in Sources */,
 				FD072D7928A19F7200F7B167 /* Coordinator.swift in Sources */,
 				FD00B37A28A1FF4C00DD90EC /* ProfileCoordinator.swift in Sources */,
 				FD072D8028A1A5A300F7B167 /* LoginCoordinator.swift in Sources */,
@@ -572,7 +533,6 @@
 				FDE2713028A1EBA90039F04A /* BiometricsCheckViewController.swift in Sources */,
 				FDE2714328A1F1B70039F04A /* MQTTClient.swift in Sources */,
 				FD072D7328A19EA400F7B167 /* NavigationRouter.swift in Sources */,
-				FD00B38C28A20FE700DD90EC /* ProfileCViewController.swift in Sources */,
 				FDE2712D28A1E74A0039F04A /* BaseTableViewCell.swift in Sources */,
 				FDE2713D28A1F0A80039F04A /* AuthDomainObject.swift in Sources */,
 				FDE2708928A1B0970039F04A /* TradeViewController.swift in Sources */,

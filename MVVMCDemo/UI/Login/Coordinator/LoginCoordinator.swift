@@ -16,12 +16,12 @@ class LoginCoordinator: BaseCoordinator {
     
     weak var delegate:LoginCoordinatorDelegate?
     
-    override func start() {
+    init() {
         let rootVC = LoginViewController()
+        super.init(with: .root(rootViewController: rootVC))
         rootVC.delegate = self
-        push(rootVC, animated: true)
     }
-    
+
     deinit {
         print("LoginCoordinator deinit")
     }
@@ -34,6 +34,8 @@ extension LoginCoordinator: LoginViewControllerCoordinator {
             let vc = BiometricsCheckViewController()
             vc.delegate = self
             push(vc, animated: true)
+        } else {
+            delegate?.loginCoordinatorGotoMain(self)
         }
     }
     

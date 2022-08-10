@@ -9,7 +9,7 @@ import UIKit
 
 protocol ProfileViewControllerCoordinator: AnyObject {
     func profileViewControllerTapLogout(_ vc: ProfileViewController)
-    func profileViewControllerStartAFlow(_ vc: ProfileViewController)
+    func profileViewControllerTapCustomFlow(_ vc: ProfileViewController)
 }
  
 class ProfileViewController: BaseViewController {
@@ -40,10 +40,10 @@ class ProfileViewController: BaseViewController {
         return button
     }()
     
-    private let profileAFlowButton: UIButton = {
+    private let customFlowButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .blue
-        button.setTitle("Start Profile A Flow", for: .normal)
+        button.setTitle("Try custom Flow", for: .normal)
         return button
     }()
     
@@ -70,7 +70,7 @@ extension ProfileViewController {
         stackView.addArrangedSubview(userNameLabel)
         stackView.addArrangedSubview(ageLabel)
         stackView.addArrangedSubview(logoutButton)
-        stackView.addArrangedSubview(profileAFlowButton)
+        stackView.addArrangedSubview(customFlowButton)
         
         stackView.snp.makeConstraints { make in
             make.center.equalToSuperview()
@@ -83,9 +83,9 @@ extension ProfileViewController {
             self.delegate?.profileViewControllerTapLogout(self)
         }
         
-        profileAFlowButton.addAction { [weak self] in
+        customFlowButton.addAction { [weak self] in
             guard let self = self else { return }
-            self.delegate?.profileViewControllerStartAFlow(self)
+            self.delegate?.profileViewControllerTapCustomFlow(self)
         }
     }
 }

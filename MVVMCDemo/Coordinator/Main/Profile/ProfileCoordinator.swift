@@ -16,28 +16,26 @@ class ProfileCoordinator: BaseCoordinator {
     
     weak var delegate:ProfileCoordinatorDelegate?
     
-    override init(router: NavigationRouter = .init()) {
+    init() {
         let rootVC = ProfileViewController()
-        let navigationController = UINavigationController(rootViewController: rootVC)
-        super.init(router: .init(navigationController: navigationController))
+        super.init(with: .root(rootViewController: rootVC))
         rootVC.delegate = self
     }
     
     deinit {
         print("ProfileCoordinator deinit")
     }
-
 }
 
 //MARK: - ProfileViewControllerCoordinator
 extension ProfileCoordinator: ProfileViewControllerCoordinator {
-    func profileViewControllerTapLogout(_ vc: ProfileViewController) {
-        delegate?.ProfileCoordinatorTapLogout(self)
-    }
-    
-    func profileViewControllerStartAFlow(_ vc: ProfileViewController) {
-        let child = ProfileACoordinator(router: router)
+    func profileViewControllerTapCustomFlow(_ vc: ProfileViewController) {
+        let child = CustomCoordinator(with: .push(router: router))
         addChild(child)
         child.start()
+    }
+    
+    func profileViewControllerTapLogout(_ vc: ProfileViewController) {
+        delegate?.ProfileCoordinatorTapLogout(self)
     }
 }

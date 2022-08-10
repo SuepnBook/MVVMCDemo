@@ -16,10 +16,10 @@ class RegisterCoordinator: BaseCoordinator {
     
     weak var delegate:RegisterCoordinatorDelegate?
     
-    override func start() {
-        let rootVC = RegisterViewController()
-        rootVC.delegate = self
-        push(rootVC, animated: true)
+    init() {
+        let rootViewController = RegisterViewController()
+        super.init(with: .root(rootViewController: rootViewController))
+        rootViewController.delegate = self
     }
     
     deinit {

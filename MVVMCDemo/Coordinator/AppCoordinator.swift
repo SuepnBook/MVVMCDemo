@@ -9,7 +9,7 @@ import UIKit
 
 enum DeepLinkOption {
     case aLink
-    case bLink
+    case hardLogout
 }
 
 enum NotificationOption {
@@ -32,11 +32,11 @@ final class AppCoordinator {
     func start() {
         switch AuthRepository.shared.getAuthStatus() {
         case .login:
-            showLoginFlow()
+            showMainFlow()
         case .logout:
             showRegisterFlow()
         case .sessionExpire:
-            showRegisterFlow()
+            showLoginFlow()
         }
         self.window?.makeKeyAndVisible()
     }
@@ -57,7 +57,6 @@ extension AppCoordinator {
         clearAllCoordinator()
         self.loginCoordinator = LoginCoordinator()
         loginCoordinator?.delegate = self
-        loginCoordinator?.start()
         setRootModule(loginCoordinator?.navigater)
     }
     
@@ -66,7 +65,6 @@ extension AppCoordinator {
         self.registerCoordinator = RegisterCoordinator()
         registerCoordinator?.delegate = self
         setRootModule(registerCoordinator?.navigater)
-        registerCoordinator?.start()
     }
     
     private func showMainFlow() {
