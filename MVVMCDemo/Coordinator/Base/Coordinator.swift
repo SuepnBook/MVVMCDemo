@@ -14,9 +14,9 @@ public protocol Coordinatable: AnyObject {
     
     var router: NavigationRouter { get set }
     
-    var startViewController:UIViewController? { get set }
-    var lastViewController:UIViewController? { get set }
-
+    var startViewController: UIViewController? { get set }
+    var lastViewController: UIViewController? { get set }
+    
     func start()
     func end()
     
@@ -33,12 +33,8 @@ public extension Coordinatable {
     }
 
     func removeChild(child: Coordinatable) {
-//        Fix retain
         child.parent = nil
-        child.startViewController = nil
-        child.lastViewController = nil
-        
-//        child.children.forEach { $0.children.removeAll() }
+        child.children.forEach { $0.children.removeAll() }
         for (index, potentialCoordinator) in children.enumerated() {
             if potentialCoordinator === child {
                 children.remove(at: index)
@@ -49,19 +45,17 @@ public extension Coordinatable {
     func removeFromParent() {
         parent?.removeChild(child: self)
     }
-    
-    
 }
 
 public class BaseCoordinator: Coordinatable {
     
-    public var parent: Coordinatable?
+    public weak var parent: Coordinatable?
     public var children: [Coordinatable] = []
     
     public var router: NavigationRouter
     
-    public var startViewController: UIViewController?
-    public var lastViewController: UIViewController?
+    public weak var startViewController: UIViewController?
+    public weak var lastViewController: UIViewController?
 
     public var navigater: UINavigationController {
         router.navigationController
@@ -117,9 +111,9 @@ public class BaseCoordinator: Coordinatable {
             if let parent = parent,
                let lastViewController = parent.lastViewController {
                 navigater.presentingViewController?.dismiss(animated: true)
-                router.popToViewController(viewController: lastViewController
-                                           , animated: true)
-                removeFromParent()
+                router.popToViewController(viewController: lastViewController,
+                                           animated: true)
+//                removeFromParent()
             }
         case .present:
             navigater.presentingViewController?.dismiss(animated: true)

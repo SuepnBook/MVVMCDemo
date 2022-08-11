@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomCoordinator: BaseCoordinator {
+class CustomFlowCoordinator: BaseCoordinator {
     
     let id = UUID().uuidString
     
@@ -24,7 +24,7 @@ class CustomCoordinator: BaseCoordinator {
 }
 
 //MARK: - ProfileViewControllerCoordinator
-extension CustomCoordinator: CustomFlowViewControllerCoordinator {
+extension CustomFlowCoordinator: CustomFlowViewControllerCoordinator {
     func customFlowViewControllerPushNewVC(_ vc: CustomFlowViewController) {
         let viewController = CustomFlowViewController(id: id)
         viewController.delegate = self
@@ -38,13 +38,13 @@ extension CustomCoordinator: CustomFlowViewControllerCoordinator {
     }
     
     func customFlowViewControllerPushNewFlow(_ vc: CustomFlowViewController) {
-        let child = CustomCoordinator(with: .push(router: router))
+        let child = CustomFlowCoordinator(with: .push(router: router))
         addChild(child)
         child.start()
     }
     
     func customFlowViewControllerPresentNewFlow(_ vc: CustomFlowViewController) {
-        let child = CustomCoordinator(with: .present(router: router))
+        let child = CustomFlowCoordinator(with: .present(router: router))
         addChild(child)
         child.start()
     }

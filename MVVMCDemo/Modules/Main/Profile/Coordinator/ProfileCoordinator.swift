@@ -30,7 +30,7 @@ class ProfileCoordinator: BaseCoordinator {
 //MARK: - ProfileViewControllerCoordinator
 extension ProfileCoordinator: ProfileViewControllerCoordinator {
     func profileViewControllerTapCustomFlow(_ vc: ProfileViewController) {
-        let child = CustomCoordinator(with: .push(router: router))
+        let child = CustomFlowCoordinator(with: .push(router: router))
         addChild(child)
         child.start()
     }
