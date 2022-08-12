@@ -8,13 +8,12 @@
 import UIKit
 
 class DashboardCoordinator: BaseCoordinator {
-    
+
     init() {
-        let rootVC = DashboardViewController()
-        super.init(with: .root(rootViewController: rootVC))
-//        rootVC.delegate = self
+        let rootViewController = DashboardViewController()
+        super.init(with: .root(rootViewController: rootViewController))
     }
-    
+
     deinit {
         print("DashboardCoordinator deinit")
     }

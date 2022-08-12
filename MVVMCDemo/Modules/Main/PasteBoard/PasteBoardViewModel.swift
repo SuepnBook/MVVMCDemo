@@ -9,19 +9,19 @@ import Combine
 import SwiftUI
 
 class PasteBoardViewModel: ObservableObject {
-    
-    @Published var pasteDatas:[PasteBoardDomainObject.PasteData] =
+
+    @Published var pasteDatas: [PasteBoardDomainObject.PasteData] =
     []
-    
-    private var repository:PasteBoardRepositroy
-    
+
+    private var repository: PasteBoardRepositroy
+
     private var subscriptions: Set<AnyCancellable> = []
-    
-    init(repository:PasteBoardRepositroy = .shared) {
+
+    init(repository: PasteBoardRepositroy = .shared) {
         self.repository = repository
         setup()
     }
-    
+
     func setup() {
         repository.$pasteDatas
             .receive(on: DispatchQueue.main)
@@ -30,10 +30,9 @@ class PasteBoardViewModel: ObservableObject {
                 self.pasteDatas = datas
             }.store(in: &subscriptions)
     }
-    
-    func create(title:String,value:String) {
+
+    func create(title: String, value: String) {
         repository.createPasteBoard(data: .init(title: title, value: value))
     }
-
 
 }

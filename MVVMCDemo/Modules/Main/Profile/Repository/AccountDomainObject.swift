@@ -9,8 +9,8 @@ import Foundation
 
 struct AccountDomainObject {
     struct Profile {
-        var userID:String
-        var name:String
-        var age:Int
+        var userID: String
+        var name: String
+        var age: Int
     }
 }

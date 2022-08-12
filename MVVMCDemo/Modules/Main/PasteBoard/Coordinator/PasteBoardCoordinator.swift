@@ -9,12 +9,12 @@ import UIKit
 import SwiftUI
 
 class PasteBoardCoordinator: BaseCoordinator {
-    
+
     init() {
-        let rootVC = UIHostingController(rootView: PasteBoardListView())
-        super.init(with: .root(rootViewController: rootVC))
+        let rootViewController = UIHostingController(rootView: PasteBoardListView())
+        super.init(with: .root(rootViewController: rootViewController))
     }
-    
+
     deinit {
         print("PasteBoardCoordinator deinit")
     }

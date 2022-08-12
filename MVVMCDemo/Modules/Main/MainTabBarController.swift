@@ -8,12 +8,12 @@
 import UIKit
 
 protocol MainTabBarControllerDelegate: AnyObject {
-    func mainTabBarControllerLogout(_ mainTabBar:MainTabBarController)
+    func mainTabBarControllerLogout(_ mainTabBar: MainTabBarController)
 }
 
 class MainTabBarController: UITabBarController {
-    
-    weak var coordinate:MainTabBarControllerDelegate?
+
+    weak var coordinate: MainTabBarControllerDelegate?
 
     private let dashboardCoordinator: DashboardCoordinator = .init()
     private let pasteBoardCoordinator: PasteBoardCoordinator = .init()
@@ -30,7 +30,7 @@ class MainTabBarController: UITabBarController {
         setupAppearance()
         setTabBarItems()
     }
-    
+
     deinit {
         print("MainTabBarController deinit")
     }

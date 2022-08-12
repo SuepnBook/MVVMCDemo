@@ -8,35 +8,35 @@
 import Foundation
 
 class AccountRepository {
-    static let shared:AccountRepository = .init()
+    static let shared: AccountRepository = .init()
 }
 
-//MARK: - Create
+// MARK: - Create
 extension AccountRepository {
-    
+
 }
 
-//MARK: - Read
+// MARK: - Read
 extension AccountRepository {
     func getUserProfile() -> AccountDomainObject.Profile {
         let userID = LocalStorageClient.getUserID()
         let name = NetworkClient.getUserName(userID: userID)
         let age = NetworkClient.getUserAge(userID: userID)
-        
+
         return .init(userID: userID, name: name, age: age)
     }
 }
 
-//MARK: - Update
+// MARK: - Update
 extension AccountRepository {
-    func updateUserName(name:String) {
-        
+    func updateUserName(name: String) {
+
     }
 }
 
-//MARK: - Delete
+// MARK: - Delete
 extension AccountRepository {
-    func deleteUser(userID:String) {
-        
+    func deleteUser(userID: String) {
+
     }
 }

@@ -8,30 +8,30 @@
 import UIKit
 
 protocol ProfileViewControllerCoordinator: AnyObject {
-    func profileViewControllerTapLogout(_ vc: ProfileViewController)
-    func profileViewControllerTapCustomFlow(_ vc: ProfileViewController)
+    func profileViewControllerTapLogout(_ viewController: ProfileViewController)
+    func profileViewControllerTapCustomFlow(_ viewController: ProfileViewController)
 }
- 
+
 class ProfileViewController: BaseViewController {
-    
+
     weak var delegate: ProfileViewControllerCoordinator?
-    
+
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         return stackView
     }()
-    
+
     private let userNameLabel: UILabel = {
         let label = UILabel()
         return label
     }()
-    
+
     private let ageLabel: UILabel = {
         let label = UILabel()
         return label
     }()
-    
+
     private let logoutButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .yellow
@@ -39,15 +39,15 @@ class ProfileViewController: BaseViewController {
         button.setTitleColor(.black, for: .normal)
         return button
     }()
-    
+
     private let customFlowButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .blue
         button.setTitle("Try custom Flow", for: .normal)
         return button
     }()
-    
-    private lazy var viewModel:ProfileViewModel = {
+
+    private lazy var viewModel: ProfileViewModel = {
         let viewModel = ProfileViewModel()
         viewModel.output = self
         return viewModel
@@ -61,28 +61,28 @@ class ProfileViewController: BaseViewController {
     }
 }
 
-//MARK: - Private Function
+// MARK: - Private Function
 extension ProfileViewController {
     private func initView() {
         view.backgroundColor = .white
-        
+
         view.addSubview(stackView)
         stackView.addArrangedSubview(userNameLabel)
         stackView.addArrangedSubview(ageLabel)
         stackView.addArrangedSubview(logoutButton)
         stackView.addArrangedSubview(customFlowButton)
-        
+
         stackView.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
     }
-    
+
     func setupReaction() {
         logoutButton.addAction { [weak self] in
             guard let self = self else { return }
             self.delegate?.profileViewControllerTapLogout(self)
         }
-        
+
         customFlowButton.addAction { [weak self] in
             guard let self = self else { return }
             self.delegate?.profileViewControllerTapCustomFlow(self)
@@ -90,7 +90,7 @@ extension ProfileViewController {
     }
 }
 
-//MARK: - ProfileViewModelOutput
+// MARK: - ProfileViewModelOutput
 extension ProfileViewController: ProfileViewModelOutput {
     func profileViewModel(_ vm: ProfileViewModel, update profile: AccountDomainObject.Profile) {
         userNameLabel.text = "My name is \(profile.name)"

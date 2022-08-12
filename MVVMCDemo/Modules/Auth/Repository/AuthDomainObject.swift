@@ -8,7 +8,7 @@
 import Foundation
 
 struct AuthDomainObject {
-    
+
     enum AuthStatus {
         case login
         case logout

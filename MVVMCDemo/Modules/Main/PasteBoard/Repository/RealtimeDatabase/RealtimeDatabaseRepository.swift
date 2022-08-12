@@ -12,17 +12,17 @@ import Combine
 import UIKit
 
 class RealtimeDatabase {
-    
-    static let shared:RealtimeDatabase = RealtimeDatabase()
-    
+
+    static let shared: RealtimeDatabase = RealtimeDatabase()
+
     private lazy var ref: DatabaseReference = Database.database().reference()
-    
-    @Published var root:RealTimeDatabaseDomainObject.Root = .init(pasteBoard: [])
-    
+
+    @Published var root: RealTimeDatabaseDomainObject.Root = .init(pasteBoard: [])
+
     init() {
         Database.database().isPersistenceEnabled = true
     }
-    
+
     func setupObserve() {
         ref
             .child("v1")
@@ -40,31 +40,31 @@ class RealtimeDatabase {
     }
 }
 
-//MARK: - Create
+// MARK: - Create
 extension RealtimeDatabase {
-    func createPasteData(data:RealTimeDatabaseDomainObject.Root.PasteData) {
+    func createPasteData(data: RealTimeDatabaseDomainObject.Root.PasteData) {
         var root = root
         root.pasteBoard.insert(data, at: 0)
         updateRoot(root: root)
     }
 }
 
-//MARK: - Read
+// MARK: - Read
 extension RealtimeDatabase {
     func getPasteData() -> [RealTimeDatabaseDomainObject.Root.PasteData] {
         return root.pasteBoard
     }
 }
 
-//MARK: - Update
+// MARK: - Update
 extension RealtimeDatabase {
-    func updatePasteData(index:Int,data:RealTimeDatabaseDomainObject.Root.PasteData) {
+    func updatePasteData(index: Int, data: RealTimeDatabaseDomainObject.Root.PasteData) {
         var root = root
         root.pasteBoard[index] = data
         updateRoot(root: root)
     }
-    
-    private func updateRoot(root:RealTimeDatabaseDomainObject.Root) {
+
+    private func updateRoot(root: RealTimeDatabaseDomainObject.Root) {
         do {
             let data = try JSONEncoder().encode(root)
             let json = try JSONSerialization.jsonObject(with: data)
@@ -76,9 +76,9 @@ extension RealtimeDatabase {
     }
 }
 
-//MARK: - Delete
+// MARK: - Delete
 extension RealtimeDatabase {
-    func deletePasteData(index:Int) {
+    func deletePasteData(index: Int) {
         var root = root
         root.pasteBoard.remove(at: index)
         updateRoot(root: root)

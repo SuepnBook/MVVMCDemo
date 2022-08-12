@@ -1,9 +1,8 @@
 //
 //  ProgressManager.swift
-//  Gozeppelin
+//  MVVMCDemo
 //
-//  Created by book_su on 2020/2/4.
-//  Copyright © 2020 Gozeppelin. All rights reserved.
+//  Created by Book on 2022/8/9.
 //
 
 import UIKit

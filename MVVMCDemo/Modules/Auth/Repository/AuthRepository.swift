@@ -8,35 +8,35 @@
 import Foundation
 
 class AuthRepository {
-    static let shared:AuthRepository = .init()
+    static let shared: AuthRepository = .init()
 }
 
-//MARK: - Create
+// MARK: - Create
 extension AuthRepository {
-    
+
 }
 
-//MARK: - Read
+// MARK: - Read
 extension AuthRepository {
     func getAuthStatus() -> AuthDomainObject.AuthStatus {
         return .login
     }
-    
+
     func isNeedBiometricsCheck() -> Bool {
         return true
     }
-    
-    func checkLogin(userName:String,password:String) -> Bool {
+
+    func checkLogin(userName: String, password: String) -> Bool {
         return true
     }
 }
 
-//MARK: - Update
+// MARK: - Update
 extension AuthRepository {
-    
+
 }
 
-//MARK: - Delete
+// MARK: - Delete
 extension AuthRepository {
-    
+
 }

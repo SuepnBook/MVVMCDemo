@@ -8,12 +8,12 @@
 import Foundation
 
 struct PasteBoardDomainObject {
-    struct PasteData:Identifiable {
-        
-        var title:String
-        var value:String
-        
-        var id:String {
+    struct PasteData: Identifiable {
+
+        var title: String
+        var value: String
+
+        var id: String {
             UUID().uuidString
         }
     }

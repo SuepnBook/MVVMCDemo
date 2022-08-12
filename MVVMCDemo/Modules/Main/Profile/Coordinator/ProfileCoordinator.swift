@@ -8,34 +8,34 @@
 import Foundation
 import UIKit
 
-protocol ProfileCoordinatorDelegate:AnyObject {
-    func ProfileCoordinatorTapLogout(_ coordinator:ProfileCoordinator)
+protocol ProfileCoordinatorDelegate: AnyObject {
+    func ProfileCoordinatorTapLogout(_ coordinator: ProfileCoordinator)
 }
 
 class ProfileCoordinator: BaseCoordinator {
-    
-    weak var delegate:ProfileCoordinatorDelegate?
-    
+
+    weak var delegate: ProfileCoordinatorDelegate?
+
     init() {
-        let rootVC = ProfileViewController()
-        super.init(with: .root(rootViewController: rootVC))
-        rootVC.delegate = self
+        let rootViewController = ProfileViewController()
+        super.init(with: .root(rootViewController: rootViewController))
+        rootViewController.delegate = self
     }
-    
+
     deinit {
         print("ProfileCoordinator deinit")
     }
 }
 
-//MARK: - ProfileViewControllerCoordinator
+// MARK: - ProfileViewControllerCoordinator
 extension ProfileCoordinator: ProfileViewControllerCoordinator {
-    func profileViewControllerTapCustomFlow(_ vc: ProfileViewController) {
+    func profileViewControllerTapCustomFlow(_ viewController: ProfileViewController) {
         let child = CustomFlowCoordinator(with: .push(router: router))
         addChild(child)
         child.start()
     }
-    
-    func profileViewControllerTapLogout(_ vc: ProfileViewController) {
+
+    func profileViewControllerTapLogout(_ viewController: ProfileViewController) {
         delegate?.ProfileCoordinatorTapLogout(self)
     }
 }

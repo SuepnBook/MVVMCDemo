@@ -1,9 +1,8 @@
 //
 //  DataSnapshotExtension.swift
-//  newmoneybook
+//  MVVMCDemo
 //
-//  Created by BookSu on 2020/12/21.
-//  Copyright © 2020 MoneyBook. All rights reserved.
+//  Created by Book on 2022/8/9.
 //
 
 import Foundation

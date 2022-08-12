@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIControl {
-    func addAction(for controlEvents: UIControl.Event = .touchUpInside, _ closure: @escaping()->()) {
-        addAction(UIAction { (action: UIAction) in closure() }, for: controlEvents)
+    func addAction(for controlEvents: UIControl.Event = .touchUpInside, _ closure: @escaping() -> Void) {
+        addAction(UIAction { (_: UIAction) in closure() }, for: controlEvents)
     }
 }

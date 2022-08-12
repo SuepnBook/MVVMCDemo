@@ -8,18 +8,18 @@
 import Foundation
 
 protocol LoginCoordinatorDelegate: AnyObject {
-    func loginCoordinatorGotoRegister(_ coordinator:LoginCoordinator)
-    func loginCoordinatorGotoMain(_ coordinator:LoginCoordinator)
+    func loginCoordinatorGotoRegister(_ coordinator: LoginCoordinator)
+    func loginCoordinatorGotoMain(_ coordinator: LoginCoordinator)
 }
 
 class LoginCoordinator: BaseCoordinator {
-    
-    weak var delegate:LoginCoordinatorDelegate?
-    
+
+    weak var delegate: LoginCoordinatorDelegate?
+
     init() {
-        let rootVC = LoginViewController()
-        super.init(with: .root(rootViewController: rootVC))
-        rootVC.delegate = self
+        let rootViewController = LoginViewController()
+        super.init(with: .root(rootViewController: rootViewController))
+        rootViewController.delegate = self
     }
 
     deinit {
@@ -27,26 +27,26 @@ class LoginCoordinator: BaseCoordinator {
     }
 }
 
-//MARK: - LoginViewControllerCoordinator
+// MARK: - LoginViewControllerCoordinator
 extension LoginCoordinator: LoginViewControllerCoordinator {
-    func loginViewControllerDidSuccessLogin(_ vc: LoginViewController) {
+    func loginViewControllerDidSuccessLogin(_ viewController: LoginViewController) {
         if AuthRepository.shared.isNeedBiometricsCheck() {
-            let vc = BiometricsCheckViewController()
-            vc.delegate = self
-            push(vc, animated: true)
+            let nextViewController = BiometricsCheckViewController()
+            nextViewController.delegate = self
+            push(nextViewController, animated: true)
         } else {
             delegate?.loginCoordinatorGotoMain(self)
         }
     }
-    
-    func loginViewControllerTapRegister(_ vc: LoginViewController) {
+
+    func loginViewControllerTapRegister(_ viewController: LoginViewController) {
         delegate?.loginCoordinatorGotoRegister(self)
     }
 }
 
-//MARK: - LoginViewControllerCoordinator
+// MARK: - LoginViewControllerCoordinator
 extension LoginCoordinator: BiometricsCheckViewControllerCoordinator {
-    func BiometricsCheckViewControllerDidSuccess(_ vc: BiometricsCheckViewController) {
+    func BiometricsCheckViewControllerDidSuccess(_ viewController: BiometricsCheckViewController) {
         delegate?.loginCoordinatorGotoMain(self)
     }
 }

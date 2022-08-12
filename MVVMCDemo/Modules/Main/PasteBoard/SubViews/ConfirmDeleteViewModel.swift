@@ -9,14 +9,14 @@ import Combine
 import SwiftUI
 
 class ConfirmDeleteViewModel: ObservableObject {
-    
-    private var repository:PasteBoardRepositroy
-    
-    init(repository:PasteBoardRepositroy = .shared) {
+
+    private var repository: PasteBoardRepositroy
+
+    init(repository: PasteBoardRepositroy = .shared) {
         self.repository = repository
     }
-    
-    func delete(index:Int) {
+
+    func delete(index: Int) {
         repository.deletePasteData(index: index)
     }
 }

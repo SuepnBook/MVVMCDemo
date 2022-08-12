@@ -15,19 +15,19 @@ struct ConfirmDeleteObject {
         self.value = value
         self.index = index
     }
-    
-    var title:String
-    var value:String
-    var index:Int
+
+    var title: String
+    var value: String
+    var index: Int
 }
 
 struct ConfirmDeleteView: View {
-    
-    @Binding var deleteData:ConfirmDeleteObject
+
+    @Binding var deleteData: ConfirmDeleteObject
     @Binding var isShowing: Bool
-    
+
     @StateObject private var viewModel = ConfirmDeleteViewModel()
-    
+
     var body: some View {
         VStack {
             Group {
@@ -44,14 +44,14 @@ struct ConfirmDeleteView: View {
                     .foregroundColor(.red)
                     .font(.title2.bold())
             }
-            
+
             HStack {
                 Text("Cancel")
                     .font(.title3)
                     .foregroundColor(.secondary)
                     .onTapGesture { isShowing = false  }
                     .padding()
-                
+
                 Button {
                     isShowing = false
                     viewModel.delete(index: deleteData.index)
@@ -71,7 +71,7 @@ struct ConfirmDeleteView: View {
 
 struct ConfirmDeleteView_Previews: PreviewProvider {
     static var previews: some View {
-        ConfirmDeleteView(deleteData: Binding.constant(.init(title:"BTC_Address")),
+        ConfirmDeleteView(deleteData: Binding.constant(.init(title: "BTC_Address")),
                           isShowing: Binding.constant(true))
         .background(.yellow)
     }

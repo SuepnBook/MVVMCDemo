@@ -33,7 +33,7 @@ final class DashboardViewModel {
 //        self.input = Input(name: nameSubject,
 //                           validate: validateSubject.asAnySubscriber())
 //    }
-    
+
 }
 
 extension DashboardViewModel {
@@ -46,4 +46,3 @@ extension DashboardViewModel {
         let greeting: AnyPublisher<String?, Never>
     }
 }
-

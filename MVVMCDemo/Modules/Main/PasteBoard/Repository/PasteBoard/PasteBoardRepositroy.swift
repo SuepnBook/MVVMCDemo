@@ -9,22 +9,22 @@ import Foundation
 import SwiftUI
 import Combine
 
-//MARK: - Create
+// MARK: - Create
 class PasteBoardRepositroy {
-    
-    static var shared:PasteBoardRepositroy = PasteBoardRepositroy()
-    
-    private var realtimeDatabase:RealtimeDatabase
-    
-    @Published var pasteDatas:[PasteBoardDomainObject.PasteData] = []
-    
+
+    static var shared: PasteBoardRepositroy = PasteBoardRepositroy()
+
+    private var realtimeDatabase: RealtimeDatabase
+
+    @Published var pasteDatas: [PasteBoardDomainObject.PasteData] = []
+
     private var subscriptions: Set<AnyCancellable> = []
-    
-    init(realtimeDatabase:RealtimeDatabase = .shared) {
+
+    init(realtimeDatabase: RealtimeDatabase = .shared) {
         self.realtimeDatabase = realtimeDatabase
         observe()
     }
-    
+
     func observe() {
         realtimeDatabase.$root
             .sink { root in
@@ -37,9 +37,9 @@ class PasteBoardRepositroy {
     }
 }
 
-//MARK: - Create
+// MARK: - Create
 extension PasteBoardRepositroy {
-    func createPasteBoard(data:PasteBoardDomainObject.PasteData) {
+    func createPasteBoard(data: PasteBoardDomainObject.PasteData) {
         let pasteDatas = RealTimeDatabaseDomainObject.Root
             .PasteData(title: data.title,
                        value: data.value)
@@ -47,7 +47,7 @@ extension PasteBoardRepositroy {
     }
 }
 
-//MARK: - Read
+// MARK: - Read
 extension PasteBoardRepositroy {
     func getPasteDatas() -> [PasteBoardDomainObject.PasteData] {
         let pasteDatas = realtimeDatabase
@@ -60,18 +60,17 @@ extension PasteBoardRepositroy {
     }
 }
 
-//MARK: - Update
+// MARK: - Update
 extension PasteBoardRepositroy {
-    func updatePasteData(index:Int,data:PasteBoardDomainObject.PasteData) {
+    func updatePasteData(index: Int, data: PasteBoardDomainObject.PasteData) {
         realtimeDatabase.updatePasteData(index: index, data: .init(title: data.title,
                                                                    value: data.value))
     }
 }
 
-//MARK: - Delete
+// MARK: - Delete
 extension PasteBoardRepositroy {
-    func deletePasteData(index:Int) {
+    func deletePasteData(index: Int) {
         realtimeDatabase.deletePasteData(index: index)
     }
 }
-

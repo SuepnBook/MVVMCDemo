@@ -8,7 +8,7 @@
 import UIKit
 
 public class NavigationRouter: NSObject {
-    
+
     public var navigationController: UINavigationController
 
     public init(navigationController: UINavigationController = UINavigationController()) {
@@ -26,7 +26,7 @@ public class NavigationRouter: NSObject {
     public func pop(animated: Bool) {
         navigationController.popViewController(animated: animated)
     }
-    
+
     public func popToViewController(viewController: UIViewController, animated: Bool) {
         navigationController.popToViewController(viewController, animated: animated)
     }
@@ -38,10 +38,10 @@ extension NavigationRouter: UINavigationControllerDelegate {
               !navigationController.viewControllers.contains(dismissedVieController) else {
             return
         }
-        
+
         if let dismissedCoordinator = dismissedVieController.coordinator,
-           let startVC = dismissedCoordinator.startViewController,
-           startVC == dismissedVieController {
+           let startViewController = dismissedCoordinator.startViewController,
+           startViewController == dismissedVieController {
             dismissedCoordinator.removeFromParent()
         }
     }
@@ -51,7 +51,7 @@ extension UIViewController {
     private enum CoordinatorAssociatedKeys {
         static var ownerKey: UInt = 0
     }
-    
+
     weak var coordinator: Coordinatable? {
         get {
             objc_getAssociatedObject(self, &CoordinatorAssociatedKeys.ownerKey) as? Coordinatable

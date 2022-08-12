@@ -11,15 +11,15 @@ import UIKit
 public protocol Coordinatable: AnyObject {
     var parent: Coordinatable? { get }
     var children: [Coordinatable] { get }
-    
-    var startViewController: UIViewController? { get set }
-    var lastViewController: UIViewController? { get set }
-    
+
+    var startViewController: UIViewController? { get }
+    var lastViewController: UIViewController? { get }
+
     func start()
     func end()
-    
+
     func setParent(_ parent: Coordinatable?)
-    
+
     func addChild(_ child: Coordinatable)
     func removeChild(_ child: Coordinatable)
     func removeAllChildren()
@@ -36,18 +36,18 @@ public class BaseCoordinator: Coordinatable {
 
     public weak var parent: Coordinatable?
     public var children: [Coordinatable] = []
-    
+
     public var router: NavigationRouter
     public var navigator: UINavigationController {
         router.navigationController
     }
-    
+
     public weak var startViewController: UIViewController?
     public weak var lastViewController: UIViewController?
-    
-    private var initType:InitType
-    
-    init(with initType:InitType) {
+
+    private var initType: InitType
+
+    init(with initType: InitType) {
         self.initType = initType
         switch initType {
         case .root(let rootViewController):
@@ -80,7 +80,7 @@ public class BaseCoordinator: Coordinatable {
             }
         }
     }
-    
+
     public func end() {
         switch initType {
         case .root:
@@ -99,16 +99,16 @@ public class BaseCoordinator: Coordinatable {
             removeFromParent()
         }
     }
-    
+
     public func setParent(_ parent: Coordinatable?) {
         self.parent = parent
     }
-    
+
     public func addChild(_ child: Coordinatable) {
         child.setParent(self)
         children.append(child)
     }
-    
+
     public func removeAllChildren() {
         children.forEach { child in
             child.setParent(nil)
@@ -128,14 +128,14 @@ public class BaseCoordinator: Coordinatable {
     }
 }
 
-//MARK: - Navigation
+// MARK: - Navigation
 extension BaseCoordinator {
     public func push(_ viewController: UIViewController, animated: Bool) {
         lastViewController = viewController
         viewController.coordinator = self
         router.push(viewController, animated: animated)
     }
-    
+
     public func pop(animated: Bool) {
         router.pop(animated: animated)
     }
@@ -148,7 +148,7 @@ extension BaseCoordinator {
     }
 }
 
-//MARK: - Enum
+// MARK: - Enum
 extension BaseCoordinator {
     enum InitType {
         case root(rootViewController: UIViewController)
