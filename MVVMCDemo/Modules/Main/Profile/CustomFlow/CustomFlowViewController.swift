@@ -29,7 +29,8 @@ class CustomFlowViewController: BaseViewController {
     
     private lazy var idLabel:UILabel = {
         let label = UILabel()
-        label.text = id
+        label.numberOfLines = 0
+        label.text = "Coordinator : \n \(id)"
         return label
     }()
     

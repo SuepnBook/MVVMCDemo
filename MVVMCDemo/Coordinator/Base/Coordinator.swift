@@ -9,10 +9,8 @@ import Foundation
 import UIKit
 
 public protocol Coordinatable: AnyObject {
-    var parent: Coordinatable? { get set }
-    var children: [Coordinatable] { get set }
-    
-    var router: NavigationRouter { get set }
+    var parent: Coordinatable? { get }
+    var children: [Coordinatable] { get }
     
     var startViewController: UIViewController? { get set }
     var lastViewController: UIViewController? { get set }
@@ -20,54 +18,34 @@ public protocol Coordinatable: AnyObject {
     func start()
     func end()
     
-    func addChild(_ coordinator: Coordinatable)
-    func removeChild(child: Coordinatable)
+    func setParent(_ parent: Coordinatable?)
+    
+    func addChild(_ child: Coordinatable)
+    func removeChild(_ child: Coordinatable)
+    func removeAllChildren()
     func removeFromParent()
 }
 
 public extension Coordinatable {
-
-    func addChild(_ coordinator: Coordinatable) {
-       coordinator.parent = self
-       children.append(coordinator)
-    }
-
-    func removeChild(child: Coordinatable) {
-        child.parent = nil
-        child.children.forEach { $0.children.removeAll() }
-        for (index, potentialCoordinator) in children.enumerated() {
-            if potentialCoordinator === child {
-                children.remove(at: index)
-            }
-        }
-    }
-    
     func removeFromParent() {
-        parent?.removeChild(child: self)
+        parent?.removeChild(self)
     }
 }
 
 public class BaseCoordinator: Coordinatable {
-    
+
     public weak var parent: Coordinatable?
     public var children: [Coordinatable] = []
     
     public var router: NavigationRouter
-    
-    public weak var startViewController: UIViewController?
-    public weak var lastViewController: UIViewController?
-
     public var navigator: UINavigationController {
         router.navigationController
     }
     
-    private var initType:InitType
+    public weak var startViewController: UIViewController?
+    public weak var lastViewController: UIViewController?
     
-    enum InitType {
-        case root(rootViewController: UIViewController)
-        case push(router: NavigationRouter)
-        case present(router: NavigationRouter)
-    }
+    private var initType:InitType
     
     init(with initType:InitType) {
         self.initType = initType
@@ -96,6 +74,7 @@ public class BaseCoordinator: Coordinatable {
             push(startViewController, animated: true)
         case .present:
             let navi = UINavigationController(rootViewController: startViewController)
+            lastViewController = startViewController
             navigator.present(navi, animated: true) {
                 self.router = .init(navigationController: navi)
             }
@@ -109,20 +88,51 @@ public class BaseCoordinator: Coordinatable {
         case .push:
             if let parent = parent,
                let lastViewController = parent.lastViewController {
-                navigator.presentingViewController?.dismiss(animated: true)
+                navigator.presentedViewController?.dismiss(animated: true)
                 router.popToViewController(viewController: lastViewController,
                                            animated: true)
+//                removeFromParent()
             }
         case .present:
-            navigator.presentingViewController?.dismiss(animated: true)
+            navigator.presentedViewController?.dismiss(animated: true)
             navigator.dismiss(animated: true)
             removeFromParent()
         }
     }
+    
+    public func setParent(_ parent: Coordinatable?) {
+        self.parent = parent
+    }
+    
+    public func addChild(_ child: Coordinatable) {
+        child.setParent(self)
+        children.append(child)
+    }
+    
+    public func removeAllChildren() {
+        children.forEach { child in
+            child.setParent(nil)
+            child.removeAllChildren()
+        }
+        children.removeAll()
+    }
 
+    public func removeChild(_ child: Coordinatable) {
+        for (index, coordinator) in children.enumerated() {
+            if coordinator === child {
+                children.remove(at: index)
+            }
+        }
+//        child.removeAllChildren()
+//        child.setParent(nil)
+    }
+}
+
+//MARK: - Navigation
+extension BaseCoordinator {
     public func push(_ viewController: UIViewController, animated: Bool) {
         lastViewController = viewController
-        viewController.coordinate = self
+        viewController.coordinator = self
         router.push(viewController, animated: animated)
     }
     
@@ -133,8 +143,16 @@ public class BaseCoordinator: Coordinatable {
     public func present(viewController: UIViewController,
                         animated: Bool = true,
                         completion: (() -> Void)? = nil) {
-        viewController.coordinate = self
+        viewController.coordinator = self
         navigator.present(viewController, animated: animated, completion: completion)
     }
 }
 
+//MARK: - Enum
+extension BaseCoordinator {
+    enum InitType {
+        case root(rootViewController: UIViewController)
+        case push(router: NavigationRouter)
+        case present(router: NavigationRouter)
+    }
+}

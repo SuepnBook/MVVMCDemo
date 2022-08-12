@@ -39,7 +39,7 @@ extension NavigationRouter: UINavigationControllerDelegate {
             return
         }
         
-        if let dismissedCoordinator = dismissedVieController.coordinate,
+        if let dismissedCoordinator = dismissedVieController.coordinator,
            let startVC = dismissedCoordinator.startViewController,
            startVC == dismissedVieController {
             dismissedCoordinator.removeFromParent()
@@ -52,7 +52,7 @@ extension UIViewController {
         static var ownerKey: UInt = 0
     }
     
-    weak var coordinate: Coordinatable? {
+    weak var coordinator: Coordinatable? {
         get {
             objc_getAssociatedObject(self, &CoordinatorAssociatedKeys.ownerKey) as? Coordinatable
         }
