@@ -57,7 +57,7 @@ public class BaseCoordinator: Coordinatable {
     public weak var startViewController: UIViewController?
     public weak var lastViewController: UIViewController?
 
-    public var navigater: UINavigationController {
+    public var navigator: UINavigationController {
         router.navigationController
     }
     
@@ -71,7 +71,6 @@ public class BaseCoordinator: Coordinatable {
     
     init(with initType:InitType) {
         self.initType = initType
-        
         switch initType {
         case .root(let rootViewController):
             let navigationController = UINavigationController(rootViewController: rootViewController)
@@ -97,7 +96,7 @@ public class BaseCoordinator: Coordinatable {
             push(startViewController, animated: true)
         case .present:
             let navi = UINavigationController(rootViewController: startViewController)
-            navigater.present(navi, animated: true) {
+            navigator.present(navi, animated: true) {
                 self.router = .init(navigationController: navi)
             }
         }
@@ -106,18 +105,17 @@ public class BaseCoordinator: Coordinatable {
     public func end() {
         switch initType {
         case .root:
-            navigater.popToRootViewController(animated: true)
+            navigator.popToRootViewController(animated: true)
         case .push:
             if let parent = parent,
                let lastViewController = parent.lastViewController {
-                navigater.presentingViewController?.dismiss(animated: true)
+                navigator.presentingViewController?.dismiss(animated: true)
                 router.popToViewController(viewController: lastViewController,
                                            animated: true)
-//                removeFromParent()
             }
         case .present:
-            navigater.presentingViewController?.dismiss(animated: true)
-            navigater.dismiss(animated: true)
+            navigator.presentingViewController?.dismiss(animated: true)
+            navigator.dismiss(animated: true)
             removeFromParent()
         }
     }
@@ -136,7 +134,7 @@ public class BaseCoordinator: Coordinatable {
                         animated: Bool = true,
                         completion: (() -> Void)? = nil) {
         viewController.coordinate = self
-        navigater.present(viewController, animated: animated, completion: completion)
+        navigator.present(viewController, animated: animated, completion: completion)
     }
 }
 

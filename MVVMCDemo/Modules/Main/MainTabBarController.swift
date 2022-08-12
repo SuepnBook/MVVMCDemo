@@ -16,7 +16,7 @@ class MainTabBarController: UITabBarController {
     weak var coordinator:MainTabBarControllerDelegate?
 
     private let dashboardCoordinator: DashboardCoordinator = .init()
-    private let tradeCoordinator: TradeCoordinator = .init()
+    private let pasteBoardCoordinator: PasteBoardCoordinator = .init()
     private lazy var profileCoordinator: ProfileCoordinator = {
         let coordinator = ProfileCoordinator()
         coordinator.delegate = self
@@ -41,7 +41,7 @@ extension MainTabBarController {
     private func setupViewControllers() {
         viewControllers = [
             dashboardCoordinator.navigater,
-            tradeCoordinator.navigater,
+            pasteBoardCoordinator.navigater,
             profileCoordinator.navigater
         ]
     }

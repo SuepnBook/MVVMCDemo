@@ -55,12 +55,6 @@ extension UIViewController {
     weak var coordinate: Coordinatable? {
         get {
             objc_getAssociatedObject(self, &CoordinatorAssociatedKeys.ownerKey) as? Coordinatable
-//            do {
-//                let result = try? objc_getAssociatedObject(self, &CoordinatorAssociatedKeys.ownerKey) as? Coordinatable
-//                return result
-//            } catch {
-//                return nil
-//            }
         }
 
         set {

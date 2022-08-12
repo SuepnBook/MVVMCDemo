@@ -6,16 +6,16 @@
 //
 
 import UIKit
+import SwiftUI
 
-class TradeCoordinator: BaseCoordinator {
+class PasteBoardCoordinator: BaseCoordinator {
     
     init() {
-        let rootVC = TradeViewController()
+        let rootVC = UIHostingController(rootView: PasteBoardListView())
         super.init(with: .root(rootViewController: rootVC))
-//        rootVC.delegate = self
     }
     
     deinit {
-        print("TradeCoordinator deinit")
+        print("PasteBoardCoordinator deinit")
     }
 }

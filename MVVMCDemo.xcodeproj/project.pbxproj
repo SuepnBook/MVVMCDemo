@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		EB9945D45449D3AA6FE00FEE /* Pods_MVVMCDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B2CB65EC0DD1411838FE41 /* Pods_MVVMCDemo.framework */; };
 		FD00B37528A1FE2500DD90EC /* DashboardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00B37428A1FE2500DD90EC /* DashboardCoordinator.swift */; };
-		FD00B37728A1FE3E00DD90EC /* TradeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00B37628A1FE3E00DD90EC /* TradeCoordinator.swift */; };
+		FD00B37728A1FE3E00DD90EC /* PasteBoardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00B37628A1FE3E00DD90EC /* PasteBoardCoordinator.swift */; };
 		FD00B37A28A1FF4C00DD90EC /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00B37928A1FF4C00DD90EC /* ProfileCoordinator.swift */; };
 		FD00B37D28A2004100DD90EC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00B37C28A2004100DD90EC /* ProfileViewController.swift */; };
 		FD00B37F28A204B700DD90EC /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00B37E28A204B700DD90EC /* ProfileViewModel.swift */; };
@@ -27,9 +27,23 @@
 		FD072D8028A1A5A300F7B167 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D7F28A1A5A300F7B167 /* LoginCoordinator.swift */; };
 		FD072D8228A1A82500F7B167 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D8128A1A82500F7B167 /* LoginViewController.swift */; };
 		FD072D8A28A1AF7500F7B167 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD072D8928A1AF7500F7B167 /* BaseViewController.swift */; };
+		FD146E9C28A5E9D700D0688B /* PasteBoardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD146E9728A5E9D700D0688B /* PasteBoardListView.swift */; };
+		FD146E9D28A5E9D700D0688B /* ConfirmDeleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD146E9928A5E9D700D0688B /* ConfirmDeleteViewModel.swift */; };
+		FD146E9E28A5E9D700D0688B /* ConfirmDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD146E9A28A5E9D700D0688B /* ConfirmDeleteView.swift */; };
+		FD146E9F28A5E9D700D0688B /* PasteBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD146E9B28A5E9D700D0688B /* PasteBoardViewModel.swift */; };
+		FD146EA328A5EA2E00D0688B /* PasteBoardDomainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD146EA128A5EA2E00D0688B /* PasteBoardDomainObject.swift */; };
+		FD146EA428A5EA2E00D0688B /* PasteBoardRepositroy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD146EA228A5EA2E00D0688B /* PasteBoardRepositroy.swift */; };
+		FD146EA828A5EB5200D0688B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FD146EA728A5EB5200D0688B /* FirebaseAnalytics */; };
+		FD146EAA28A5EB5200D0688B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = FD146EA928A5EB5200D0688B /* FirebaseDatabase */; };
+		FD146EAC28A5EB5200D0688B /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FD146EAB28A5EB5200D0688B /* FirebaseDatabaseSwift */; };
+		FD146EB028A5EB6D00D0688B /* RealtimeDatabaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD146EAE28A5EB6C00D0688B /* RealtimeDatabaseRepository.swift */; };
+		FD146EB128A5EB6D00D0688B /* RealTimeDatabaseDomainObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD146EAF28A5EB6C00D0688B /* RealTimeDatabaseDomainObject.swift */; };
+		FD146EB428A5EBA800D0688B /* DataSnapshotExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD146EB228A5EBA800D0688B /* DataSnapshotExtension.swift */; };
+		FD146EB528A5EBA800D0688B /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD146EB328A5EBA800D0688B /* DictionaryExtension.swift */; };
+		FD146EB828A5EBD300D0688B /* ProgressManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD146EB728A5EBD300D0688B /* ProgressManager.swift */; };
+		FD146EBA28A5ECD100D0688B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD146EB928A5ECD100D0688B /* GoogleService-Info.plist */; };
 		FDE2708528A1B05F0039F04A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2708428A1B05F0039F04A /* RegisterViewController.swift */; };
 		FDE2708728A1B08F0039F04A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2708628A1B08F0039F04A /* DashboardViewController.swift */; };
-		FDE2708928A1B0970039F04A /* TradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2708828A1B0970039F04A /* TradeViewController.swift */; };
 		FDE2708B28A1B17F0039F04A /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2708A28A1B17F0039F04A /* RegisterCoordinator.swift */; };
 		FDE2712D28A1E74A0039F04A /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2712C28A1E74A0039F04A /* BaseTableViewCell.swift */; };
 		FDE2713028A1EBA90039F04A /* BiometricsCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE2712F28A1EBA90039F04A /* BiometricsCheckViewController.swift */; };
@@ -49,7 +63,7 @@
 		4E1EF2F088911A75A0EF6E42 /* Pods-MVVMCDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMCDemo.release.xcconfig"; path = "Target Support Files/Pods-MVVMCDemo/Pods-MVVMCDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B1B2CB65EC0DD1411838FE41 /* Pods_MVVMCDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMCDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD00B37428A1FE2500DD90EC /* DashboardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCoordinator.swift; sourceTree = "<group>"; };
-		FD00B37628A1FE3E00DD90EC /* TradeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeCoordinator.swift; sourceTree = "<group>"; };
+		FD00B37628A1FE3E00DD90EC /* PasteBoardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteBoardCoordinator.swift; sourceTree = "<group>"; };
 		FD00B37928A1FF4C00DD90EC /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		FD00B37C28A2004100DD90EC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FD00B37E28A204B700DD90EC /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -69,9 +83,20 @@
 		FD072D8128A1A82500F7B167 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FD072D8728A1AD3B00F7B167 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD072D8928A1AF7500F7B167 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		FD146E9728A5E9D700D0688B /* PasteBoardListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasteBoardListView.swift; sourceTree = "<group>"; };
+		FD146E9928A5E9D700D0688B /* ConfirmDeleteViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmDeleteViewModel.swift; sourceTree = "<group>"; };
+		FD146E9A28A5E9D700D0688B /* ConfirmDeleteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmDeleteView.swift; sourceTree = "<group>"; };
+		FD146E9B28A5E9D700D0688B /* PasteBoardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasteBoardViewModel.swift; sourceTree = "<group>"; };
+		FD146EA128A5EA2E00D0688B /* PasteBoardDomainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasteBoardDomainObject.swift; sourceTree = "<group>"; };
+		FD146EA228A5EA2E00D0688B /* PasteBoardRepositroy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasteBoardRepositroy.swift; sourceTree = "<group>"; };
+		FD146EAE28A5EB6C00D0688B /* RealtimeDatabaseRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealtimeDatabaseRepository.swift; sourceTree = "<group>"; };
+		FD146EAF28A5EB6C00D0688B /* RealTimeDatabaseDomainObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealTimeDatabaseDomainObject.swift; sourceTree = "<group>"; };
+		FD146EB228A5EBA800D0688B /* DataSnapshotExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSnapshotExtension.swift; sourceTree = "<group>"; };
+		FD146EB328A5EBA800D0688B /* DictionaryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
+		FD146EB728A5EBD300D0688B /* ProgressManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressManager.swift; sourceTree = "<group>"; };
+		FD146EB928A5ECD100D0688B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FDE2708428A1B05F0039F04A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		FDE2708628A1B08F0039F04A /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		FDE2708828A1B0970039F04A /* TradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeViewController.swift; sourceTree = "<group>"; };
 		FDE2708A28A1B17F0039F04A /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
 		FDE2712C28A1E74A0039F04A /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		FDE2712F28A1EBA90039F04A /* BiometricsCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricsCheckViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +116,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD146EAC28A5EB5200D0688B /* FirebaseDatabaseSwift in Frameworks */,
+				FD146EAA28A5EB5200D0688B /* FirebaseDatabase in Frameworks */,
+				FD146EA828A5EB5200D0688B /* FirebaseAnalytics in Frameworks */,
 				EB9945D45449D3AA6FE00FEE /* Pods_MVVMCDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,7 +154,7 @@
 		FD00B37328A1FE1100DD90EC /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				FD00B37628A1FE3E00DD90EC /* TradeCoordinator.swift */,
+				FD00B37628A1FE3E00DD90EC /* PasteBoardCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -147,6 +175,7 @@
 				FD00B37E28A204B700DD90EC /* ProfileViewModel.swift */,
 				FD00B38128A20F7300DD90EC /* CustomFlow */,
 				FD00B37828A1FF3D00DD90EC /* Coordinator */,
+				FDE2713928A1F0370039F04A /* Repository */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -210,9 +239,11 @@
 				FD072D1E28A183AE00F7B167 /* Modules */,
 				FD072D1C28A183A000F7B167 /* Repository */,
 				FD072D1B28A1839800F7B167 /* UIComponent */,
+				FD146EB628A5EBC900D0688B /* Manager */,
 				FDE2713128A1EE140039F04A /* Extension */,
 				FD072D1028A1837000F7B167 /* Assets.xcassets */,
 				FD072D8728A1AD3B00F7B167 /* Info.plist */,
+				FD146EB928A5ECD100D0688B /* GoogleService-Info.plist */,
 			);
 			path = MVVMCDemo;
 			sourceTree = "<group>";
@@ -229,8 +260,6 @@
 		FD072D1C28A183A000F7B167 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				FDE2713628A1EFE10039F04A /* AuthRepository */,
-				FDE2713928A1F0370039F04A /* AccountRepository */,
 				FDE2708F28A1B2E60039F04A /* LocalStorage */,
 				FDE2708D28A1B2DA0039F04A /* MQTT */,
 				FDE2708C28A1B2D60039F04A /* Network */,
@@ -250,8 +279,7 @@
 		FD072D1E28A183AE00F7B167 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				FD072D2428A19B6500F7B167 /* Login */,
-				FD072D2528A19B6C00F7B167 /* Register */,
+				FD146EBB28A5EFF100D0688B /* Auth */,
 				FD072D2628A19B7200F7B167 /* Main */,
 			);
 			path = Modules;
@@ -282,7 +310,7 @@
 			children = (
 				FD072D0B28A1836F00F7B167 /* MainTabBarController.swift */,
 				FD072D2728A19B8B00F7B167 /* Dashboard */,
-				FD072D2828A19B9200F7B167 /* Trade */,
+				FD072D2828A19B9200F7B167 /* PasteBoard */,
 				FD00B37B28A2003100DD90EC /* Profile */,
 			);
 			path = Main;
@@ -299,13 +327,16 @@
 			path = Dashboard;
 			sourceTree = "<group>";
 		};
-		FD072D2828A19B9200F7B167 /* Trade */ = {
+		FD072D2828A19B9200F7B167 /* PasteBoard */ = {
 			isa = PBXGroup;
 			children = (
-				FDE2708828A1B0970039F04A /* TradeViewController.swift */,
+				FD146E9728A5E9D700D0688B /* PasteBoardListView.swift */,
+				FD146E9B28A5E9D700D0688B /* PasteBoardViewModel.swift */,
+				FD146E9828A5E9D700D0688B /* SubViews */,
+				FD146EA528A5EA4F00D0688B /* Repository */,
 				FD00B37328A1FE1100DD90EC /* Coordinator */,
 			);
-			path = Trade;
+			path = PasteBoard;
 			sourceTree = "<group>";
 		};
 		FD072D7528A19EAA00F7B167 /* Base */ = {
@@ -315,6 +346,60 @@
 				FD072D6F28A19EA400F7B167 /* NavigationRouter.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		FD146E9828A5E9D700D0688B /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				FD146E9928A5E9D700D0688B /* ConfirmDeleteViewModel.swift */,
+				FD146E9A28A5E9D700D0688B /* ConfirmDeleteView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		FD146EA028A5EA2E00D0688B /* PasteBoard */ = {
+			isa = PBXGroup;
+			children = (
+				FD146EA128A5EA2E00D0688B /* PasteBoardDomainObject.swift */,
+				FD146EA228A5EA2E00D0688B /* PasteBoardRepositroy.swift */,
+			);
+			path = PasteBoard;
+			sourceTree = "<group>";
+		};
+		FD146EA528A5EA4F00D0688B /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				FD146EAD28A5EB6C00D0688B /* RealtimeDatabase */,
+				FD146EA028A5EA2E00D0688B /* PasteBoard */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		FD146EAD28A5EB6C00D0688B /* RealtimeDatabase */ = {
+			isa = PBXGroup;
+			children = (
+				FD146EAE28A5EB6C00D0688B /* RealtimeDatabaseRepository.swift */,
+				FD146EAF28A5EB6C00D0688B /* RealTimeDatabaseDomainObject.swift */,
+			);
+			path = RealtimeDatabase;
+			sourceTree = "<group>";
+		};
+		FD146EB628A5EBC900D0688B /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				FD146EB728A5EBD300D0688B /* ProgressManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		FD146EBB28A5EFF100D0688B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				FD072D2428A19B6500F7B167 /* Login */,
+				FD072D2528A19B6C00F7B167 /* Register */,
+				FDE2713628A1EFE10039F04A /* Repository */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		FDE2708C28A1B2D60039F04A /* Network */ = {
@@ -352,27 +437,29 @@
 		FDE2713128A1EE140039F04A /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				FD146EB228A5EBA800D0688B /* DataSnapshotExtension.swift */,
+				FD146EB328A5EBA800D0688B /* DictionaryExtension.swift */,
 				FDE2713228A1EE260039F04A /* UIControlExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		FDE2713628A1EFE10039F04A /* AuthRepository */ = {
+		FDE2713628A1EFE10039F04A /* Repository */ = {
 			isa = PBXGroup;
 			children = (
 				FDE2713C28A1F0A80039F04A /* AuthDomainObject.swift */,
 				FDE2713728A1EFF40039F04A /* AuthRepository.swift */,
 			);
-			path = AuthRepository;
+			path = Repository;
 			sourceTree = "<group>";
 		};
-		FDE2713928A1F0370039F04A /* AccountRepository */ = {
+		FDE2713928A1F0370039F04A /* Repository */ = {
 			isa = PBXGroup;
 			children = (
 				FDE2713A28A1F04C0039F04A /* AccountDomainObject.swift */,
 				FDE2713E28A1F0DE0039F04A /* AccountRepository.swift */,
 			);
-			path = AccountRepository;
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +480,11 @@
 			dependencies = (
 			);
 			name = MVVMCDemo;
+			packageProductDependencies = (
+				FD146EA728A5EB5200D0688B /* FirebaseAnalytics */,
+				FD146EA928A5EB5200D0688B /* FirebaseDatabase */,
+				FD146EAB28A5EB5200D0688B /* FirebaseDatabaseSwift */,
+			);
 			productName = MVVMCDemo;
 			productReference = FD072D0428A1836F00F7B167 /* MVVMCDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -421,6 +513,9 @@
 				Base,
 			);
 			mainGroup = FD072CFB28A1836F00F7B167;
+			packageReferences = (
+				FD146EA628A5EB5200D0688B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = FD072D0528A1836F00F7B167 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -437,6 +532,7 @@
 			files = (
 				FD072D1428A1837000F7B167 /* LaunchScreen.storyboard in Resources */,
 				FD072D1128A1837000F7B167 /* Assets.xcassets in Resources */,
+				FD146EBA28A5ECD100D0688B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,31 +591,41 @@
 				FDE2708528A1B05F0039F04A /* RegisterViewController.swift in Sources */,
 				FDE2713828A1EFF40039F04A /* AuthRepository.swift in Sources */,
 				FD072D2228A1886700F7B167 /* AppCoordinator.swift in Sources */,
-				FD00B37728A1FE3E00DD90EC /* TradeCoordinator.swift in Sources */,
+				FD146E9E28A5E9D700D0688B /* ConfirmDeleteView.swift in Sources */,
+				FD00B37728A1FE3E00DD90EC /* PasteBoardCoordinator.swift in Sources */,
 				FDE2708B28A1B17F0039F04A /* RegisterCoordinator.swift in Sources */,
+				FD146EA328A5EA2E00D0688B /* PasteBoardDomainObject.swift in Sources */,
+				FD146EB828A5EBD300D0688B /* ProgressManager.swift in Sources */,
+				FD146E9D28A5E9D700D0688B /* ConfirmDeleteViewModel.swift in Sources */,
 				FD072D0C28A1836F00F7B167 /* MainTabBarController.swift in Sources */,
 				FD00B38628A20FAE00DD90EC /* CustomFlowCoordinator.swift in Sources */,
 				FDE2713B28A1F04C0039F04A /* AccountDomainObject.swift in Sources */,
 				FD072D8A28A1AF7500F7B167 /* BaseViewController.swift in Sources */,
 				FDE2713528A1EE810039F04A /* LoginViewModel.swift in Sources */,
+				FD146EA428A5EA2E00D0688B /* PasteBoardRepositroy.swift in Sources */,
 				FD00B37528A1FE2500DD90EC /* DashboardCoordinator.swift in Sources */,
 				FD00B38E28A2256B00DD90EC /* DashboardViewModel.swift in Sources */,
+				FD146E9F28A5E9D700D0688B /* PasteBoardViewModel.swift in Sources */,
 				FDE2708728A1B08F0039F04A /* DashboardViewController.swift in Sources */,
 				FD072D0828A1836F00F7B167 /* AppDelegate.swift in Sources */,
 				FD00B38828A20FD500DD90EC /* CustomFlowViewController.swift in Sources */,
+				FD146EB428A5EBA800D0688B /* DataSnapshotExtension.swift in Sources */,
 				FD072D7928A19F7200F7B167 /* Coordinator.swift in Sources */,
 				FD00B37A28A1FF4C00DD90EC /* ProfileCoordinator.swift in Sources */,
 				FD072D8028A1A5A300F7B167 /* LoginCoordinator.swift in Sources */,
 				FD00B37D28A2004100DD90EC /* ProfileViewController.swift in Sources */,
 				FD00B39128A22BDC00DD90EC /* TrasactionTableViewCell.swift in Sources */,
+				FD146EB128A5EB6D00D0688B /* RealTimeDatabaseDomainObject.swift in Sources */,
 				FDE2713328A1EE260039F04A /* UIControlExtension.swift in Sources */,
 				FDE2714128A1F1280039F04A /* LocalStorageClient.swift in Sources */,
 				FDE2713028A1EBA90039F04A /* BiometricsCheckViewController.swift in Sources */,
+				FD146EB528A5EBA800D0688B /* DictionaryExtension.swift in Sources */,
 				FDE2714328A1F1B70039F04A /* MQTTClient.swift in Sources */,
 				FD072D7328A19EA400F7B167 /* NavigationRouter.swift in Sources */,
 				FDE2712D28A1E74A0039F04A /* BaseTableViewCell.swift in Sources */,
 				FDE2713D28A1F0A80039F04A /* AuthDomainObject.swift in Sources */,
-				FDE2708928A1B0970039F04A /* TradeViewController.swift in Sources */,
+				FD146E9C28A5E9D700D0688B /* PasteBoardListView.swift in Sources */,
+				FD146EB028A5EB6D00D0688B /* RealtimeDatabaseRepository.swift in Sources */,
 				FDE2714528A1F1CC0039F04A /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -730,6 +836,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FD146EA628A5EB5200D0688B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FD146EA728A5EB5200D0688B /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD146EA628A5EB5200D0688B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		FD146EA928A5EB5200D0688B /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD146EA628A5EB5200D0688B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		FD146EAB28A5EB5200D0688B /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD146EA628A5EB5200D0688B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FD072CFC28A1836F00F7B167 /* Project object */;
 }
