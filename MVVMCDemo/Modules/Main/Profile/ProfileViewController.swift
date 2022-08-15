@@ -14,7 +14,7 @@ protocol ProfileViewControllerCoordinator: AnyObject {
 
 class ProfileViewController: BaseViewController {
 
-    weak var delegate: ProfileViewControllerCoordinator?
+    weak var coordinator: ProfileViewControllerCoordinator?
 
     private let stackView: UIStackView = {
         let stackView = UIStackView()
@@ -80,19 +80,19 @@ extension ProfileViewController {
     func setupReaction() {
         logoutButton.addAction { [weak self] in
             guard let self = self else { return }
-            self.delegate?.profileViewControllerTapLogout(self)
+            self.coordinator?.profileViewControllerTapLogout(self)
         }
 
         customFlowButton.addAction { [weak self] in
             guard let self = self else { return }
-            self.delegate?.profileViewControllerTapCustomFlow(self)
+            self.coordinator?.profileViewControllerTapCustomFlow(self)
         }
     }
 }
 
 // MARK: - ProfileViewModelOutput
 extension ProfileViewController: ProfileViewModelOutput {
-    func profileViewModel(_ vm: ProfileViewModel, update profile: AccountDomainObject.Profile) {
+    func profileViewModel(_ viewModel: ProfileViewModel, update profile: AccountDomainObject.Profile) {
         userNameLabel.text = "My name is \(profile.name)"
         ageLabel.text = "My age is \(profile.age)"
     }

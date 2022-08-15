@@ -15,7 +15,7 @@ class CustomFlowCoordinator: BaseCoordinator {
         let viewController = CustomFlowViewController(id: id)
         startViewController = viewController
         super.start()
-        viewController.delegate = self
+        viewController.coordinator = self
     }
 
     deinit {
@@ -27,13 +27,13 @@ class CustomFlowCoordinator: BaseCoordinator {
 extension CustomFlowCoordinator: CustomFlowViewControllerCoordinator {
     func customFlowViewControllerPushNew(_ viewController: CustomFlowViewController) {
         let viewController = CustomFlowViewController(id: id)
-        viewController.delegate = self
+        viewController.coordinator = self
         push(viewController, animated: true)
     }
 
     func customFlowViewControllerPresentNew(_ viewController: CustomFlowViewController) {
         let viewController = CustomFlowViewController(id: id)
-        viewController.delegate = self
+        viewController.coordinator = self
         present(viewController: viewController, animated: true, completion: nil)
     }
 

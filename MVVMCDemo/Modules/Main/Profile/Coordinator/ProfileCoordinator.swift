@@ -14,12 +14,12 @@ protocol ProfileCoordinatorDelegate: AnyObject {
 
 class ProfileCoordinator: BaseCoordinator {
 
-    weak var delegate: ProfileCoordinatorDelegate?
+    weak var coordinator: ProfileCoordinatorDelegate?
 
     init() {
         let rootViewController = ProfileViewController()
         super.init(with: .root(rootViewController: rootViewController))
-        rootViewController.delegate = self
+        rootViewController.coordinator = self
     }
 
     deinit {
@@ -36,6 +36,6 @@ extension ProfileCoordinator: ProfileViewControllerCoordinator {
     }
 
     func profileViewControllerTapLogout(_ viewController: ProfileViewController) {
-        delegate?.ProfileCoordinatorTapLogout(self)
+        coordinator?.ProfileCoordinatorTapLogout(self)
     }
 }

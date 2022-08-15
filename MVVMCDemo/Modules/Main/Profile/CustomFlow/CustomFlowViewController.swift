@@ -17,7 +17,7 @@ protocol CustomFlowViewControllerCoordinator: AnyObject {
 
 class CustomFlowViewController: BaseViewController {
 
-    weak var delegate: CustomFlowViewControllerCoordinator?
+    weak var coordinator: CustomFlowViewControllerCoordinator?
 
     private let id: String
 
@@ -109,27 +109,27 @@ extension CustomFlowViewController {
 
         pushNewButton.addAction { [weak self] in
             guard let self = self else { return }
-            self.delegate?.customFlowViewControllerPushNew(self)
+            self.coordinator?.customFlowViewControllerPushNew(self)
         }
 
         presentNewButton.addAction { [weak self] in
             guard let self = self else { return }
-            self.delegate?.customFlowViewControllerPresentNew(self)
+            self.coordinator?.customFlowViewControllerPresentNew(self)
         }
 
         pushNewFlowButton.addAction { [weak self] in
             guard let self = self else { return }
-            self.delegate?.customFlowViewControllerPushNewFlow(self)
+            self.coordinator?.customFlowViewControllerPushNewFlow(self)
         }
 
         presentNewFlowButton.addAction { [weak self] in
             guard let self = self else { return }
-            self.delegate?.customFlowViewControllerPresentNewFlow(self)
+            self.coordinator?.customFlowViewControllerPresentNewFlow(self)
         }
 
         endThisFlowButton.addAction { [weak self] in
             guard let self = self else { return }
-            self.delegate?.customFlowViewControllerEndThisFlow(self)
+            self.coordinator?.customFlowViewControllerEndThisFlow(self)
         }
     }
 }

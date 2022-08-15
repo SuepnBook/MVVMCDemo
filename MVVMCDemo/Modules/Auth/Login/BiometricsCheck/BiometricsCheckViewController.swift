@@ -13,7 +13,7 @@ protocol BiometricsCheckViewControllerCoordinator: AnyObject {
 
 class BiometricsCheckViewController: BaseViewController {
 
-    weak var delegate: BiometricsCheckViewControllerCoordinator?
+    weak var coordinator: BiometricsCheckViewControllerCoordinator?
 
     private let imageView: UIImageView = {
         let view = UIImageView(image: UIImage(named: "BiometricsCheckView"))
@@ -28,7 +28,7 @@ class BiometricsCheckViewController: BaseViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        delegate?.BiometricsCheckViewControllerDidSuccess(self)
+        coordinator?.BiometricsCheckViewControllerDidSuccess(self)
     }
 }
 

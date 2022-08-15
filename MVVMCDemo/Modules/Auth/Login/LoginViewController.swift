@@ -15,7 +15,7 @@ protocol LoginViewControllerCoordinator: AnyObject {
 
 class LoginViewController: BaseViewController {
 
-    weak var delegate: LoginViewControllerCoordinator?
+    weak var coordinator: LoginViewControllerCoordinator?
 
     private let imageView: UIImageView = {
         let view = UIImageView(image: UIImage(named: "LoginView"))
@@ -81,7 +81,7 @@ extension LoginViewController {
 
         registerButton.addAction { [weak self] in
             guard let self = self else { return }
-            self.delegate?.loginViewControllerTapRegister(self)
+            self.coordinator?.loginViewControllerTapRegister(self)
         }
     }
 
@@ -94,7 +94,7 @@ extension LoginViewController {
 extension LoginViewController: LoginViewModelOutput {
     func loginViewModel(_ vm: LoginViewModel, with isLoginSuccess: Bool) {
         if isLoginSuccess {
-            delegate?.loginViewControllerDidSuccessLogin(self)
+            coordinator?.loginViewControllerDidSuccessLogin(self)
         } else {
             showLoginError()
         }

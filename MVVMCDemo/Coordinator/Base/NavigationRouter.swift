@@ -40,7 +40,7 @@ extension NavigationRouter: UINavigationControllerDelegate {
               !navigationController.viewControllers.contains(dismissFromViewController) else {
             return
         }
-        
+
 //      以下代表此次 didshow 是 pop 行為造成
 //      Navigation : [ dismissToViewController <- dismissFromViewController ]
 
@@ -50,7 +50,7 @@ extension NavigationRouter: UINavigationControllerDelegate {
 
 //      TASK 1 : 因應 pop 的發生，需要修正 dismissedCoordinator - lastViewController
         dismissedCoordinator.setLastViewController(dismissToViewController)
-        
+
 //      TASK 2 : 如果 pop 的 VC 已經是當前 Coordinator 最後一個管理的 VC , 則釋放 pop vc coordinator
         if let startViewController = dismissedCoordinator.startViewController,
            startViewController == dismissFromViewController {

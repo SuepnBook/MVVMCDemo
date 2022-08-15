@@ -56,21 +56,21 @@ extension AppCoordinator {
     private func showLoginFlow() {
         clearAllCoordinator()
         self.loginCoordinator = LoginCoordinator()
-        loginCoordinator?.delegate = self
+        loginCoordinator?.coordinator = self
         setRootModule(loginCoordinator?.navigator)
     }
 
     private func showRegisterFlow() {
         clearAllCoordinator()
         self.registerCoordinator = RegisterCoordinator()
-        registerCoordinator?.delegate = self
+        registerCoordinator?.coordinator = self
         setRootModule(registerCoordinator?.navigator)
     }
 
     private func showMainFlow() {
         clearAllCoordinator()
         self.mainCoordinator = MainTabBarController()
-        mainCoordinator?.coordinate = self
+        mainCoordinator?.coordinator = self
         setRootModule(mainCoordinator)
     }
 

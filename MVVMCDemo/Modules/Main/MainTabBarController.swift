@@ -13,13 +13,13 @@ protocol MainTabBarControllerDelegate: AnyObject {
 
 class MainTabBarController: UITabBarController {
 
-    weak var coordinate: MainTabBarControllerDelegate?
+    weak var coordinator: MainTabBarControllerDelegate?
 
     private let dashboardCoordinator: DashboardCoordinator = .init()
     private let pasteBoardCoordinator: PasteBoardCoordinator = .init()
     private lazy var profileCoordinator: ProfileCoordinator = {
         let coordinator = ProfileCoordinator()
-        coordinator.delegate = self
+        coordinator.coordinator = self
         return coordinator
     }()
 
@@ -87,6 +87,6 @@ extension MainTabBarController {
 // MARK: - ProfileCoordinatorDelegate
 extension MainTabBarController: ProfileCoordinatorDelegate {
     func ProfileCoordinatorTapLogout(_ coordinator: ProfileCoordinator) {
-        self.coordinate?.mainTabBarControllerLogout(self)
+        self.coordinator?.mainTabBarControllerLogout(self)
     }
 }

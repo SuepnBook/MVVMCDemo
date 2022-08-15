@@ -174,8 +174,8 @@
 				FD00B37C28A2004100DD90EC /* ProfileViewController.swift */,
 				FD00B37E28A204B700DD90EC /* ProfileViewModel.swift */,
 				FD00B38128A20F7300DD90EC /* CustomFlow */,
-				FD00B37828A1FF3D00DD90EC /* Coordinator */,
 				FDE2713928A1F0370039F04A /* Repository */,
+				FD00B37828A1FF3D00DD90EC /* Coordinator */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -369,8 +369,8 @@
 		FD146EA528A5EA4F00D0688B /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				FD146EAD28A5EB6C00D0688B /* RealtimeDatabase */,
 				FD146EA028A5EA2E00D0688B /* PasteBoard */,
+				FD146EAD28A5EB6C00D0688B /* RealtimeDatabase */,
 			);
 			path = Repository;
 			sourceTree = "<group>";

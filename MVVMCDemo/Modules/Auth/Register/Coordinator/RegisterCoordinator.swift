@@ -14,12 +14,12 @@ protocol RegisterCoordinatorDelegate: AnyObject {
 
 class RegisterCoordinator: BaseCoordinator {
 
-    weak var delegate: RegisterCoordinatorDelegate?
+    weak var coordinator: RegisterCoordinatorDelegate?
 
     init() {
         let rootViewController = RegisterViewController()
         super.init(with: .root(rootViewController: rootViewController))
-        rootViewController.delegate = self
+        rootViewController.coordinator = self
     }
 
     deinit {
@@ -31,10 +31,10 @@ class RegisterCoordinator: BaseCoordinator {
 // MARK: - RegisterViewControllerCoordinator
 extension RegisterCoordinator: RegisterViewControllerCoordinator {
     func registerViewControllerReigsterSuccess(_ viewController: RegisterViewController) {
-        delegate?.RegisterCoordinatorGotoMain(self)
+        coordinator?.RegisterCoordinatorGotoMain(self)
     }
 
     func registerViewControllerTapLogin(_ viewController: RegisterViewController) {
-        delegate?.RegisterCoordinatorGotoLogin(self)
+        coordinator?.RegisterCoordinatorGotoLogin(self)
     }
 }

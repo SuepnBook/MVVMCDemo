@@ -8,11 +8,11 @@
 import Foundation
 
 class NetworkClient {
-    static func getUserAge(userID: String) -> Int {
+    func getUserAge(userID: String) -> Int {
         return 30
     }
 
-    static func getUserName(userID: String) -> String {
+    func getUserName(userID: String) -> String {
         return "username"
     }
 }

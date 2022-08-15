@@ -24,6 +24,8 @@ public protocol Coordinatable: AnyObject {
     func removeChild(_ child: Coordinatable)
     func removeAllChildren()
     func removeFromParent()
+
+    func setLastViewController(_ viewController: UIViewController)
 }
 
 public extension Coordinatable {
@@ -79,6 +81,7 @@ public class BaseCoordinator: Coordinatable {
                 self.router = .init(navigationController: navi)
             }
         }
+
     }
 
     public func end() {
@@ -91,7 +94,6 @@ public class BaseCoordinator: Coordinatable {
                 navigator.presentedViewController?.dismiss(animated: true)
                 router.popToViewController(viewController: lastViewController,
                                            animated: true)
-//                removeFromParent()
             }
         case .present:
             navigator.presentedViewController?.dismiss(animated: true)
@@ -123,8 +125,12 @@ public class BaseCoordinator: Coordinatable {
                 children.remove(at: index)
             }
         }
-//        child.removeAllChildren()
-//        child.setParent(nil)
+        child.removeAllChildren()
+        child.setParent(nil)
+    }
+
+    public func setLastViewController(_ viewController: UIViewController) {
+        lastViewController = viewController
     }
 }
 
@@ -132,7 +138,7 @@ public class BaseCoordinator: Coordinatable {
 extension BaseCoordinator {
     public func push(_ viewController: UIViewController, animated: Bool) {
         lastViewController = viewController
-        viewController.coordinator = self
+        viewController.baseCoordinator = self
         router.push(viewController, animated: animated)
     }
 
@@ -143,7 +149,7 @@ extension BaseCoordinator {
     public func present(viewController: UIViewController,
                         animated: Bool = true,
                         completion: (() -> Void)? = nil) {
-        viewController.coordinator = self
+        viewController.baseCoordinator = self
         navigator.present(viewController, animated: animated, completion: completion)
     }
 }

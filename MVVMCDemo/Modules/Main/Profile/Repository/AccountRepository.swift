@@ -9,6 +9,14 @@ import Foundation
 
 class AccountRepository {
     static let shared: AccountRepository = .init()
+
+    private let network: NetworkClient
+
+    private var profile: AccountDomainObject.Profile?
+
+    init(network: NetworkClient = .init()) {
+        self.network = network
+    }
 }
 
 // MARK: - Create
@@ -19,16 +27,37 @@ extension AccountRepository {
 // MARK: - Read
 extension AccountRepository {
     func getUserProfile() -> AccountDomainObject.Profile {
-        let userID = LocalStorageClient.getUserID()
-        let name = NetworkClient.getUserName(userID: userID)
-        let age = NetworkClient.getUserAge(userID: userID)
+        if let profile = profile {
 
-        return .init(userID: userID, name: name, age: age)
+            return profile
+
+        } else {
+
+            let userID = LocalStorageClient.getUserID()
+
+            let name = network.getUserName(userID: userID)
+
+            let age = network.getUserAge(userID: userID)
+
+            let result: AccountDomainObject.Profile = .init(userID: userID, name: name, age: age)
+
+            self.profile = result
+
+            return result
+        }
     }
 }
 
 // MARK: - Update
 extension AccountRepository {
+    func updateProfile () {
+        let userID = LocalStorageClient.getUserID()
+
+        let name = network.getUserName(userID: userID)
+        let age = network.getUserAge(userID: userID)
+
+        self.profile =  .init(userID: userID, name: name, age: age)
+    }
     func updateUserName(name: String) {
 
     }

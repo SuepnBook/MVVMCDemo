@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ProfileViewModelOutput: AnyObject {
-    func profileViewModel(_ vm: ProfileViewModel,
+    func profileViewModel(_ viewModel: ProfileViewModel,
                           update profile: AccountDomainObject.Profile)
 }
 

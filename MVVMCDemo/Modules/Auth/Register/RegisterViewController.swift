@@ -14,7 +14,7 @@ protocol RegisterViewControllerCoordinator: AnyObject {
 
 class RegisterViewController: BaseViewController {
 
-    weak var delegate: RegisterViewControllerCoordinator?
+    weak var coordinator: RegisterViewControllerCoordinator?
 
     private let imageView: UIImageView = {
         let view = UIImageView(image: UIImage(named: "RegisterView"))
@@ -67,12 +67,12 @@ extension RegisterViewController {
 
         registerButton.addAction { [weak self] in
             guard let self = self else { return }
-            self.delegate?.registerViewControllerReigsterSuccess(self)
+            self.coordinator?.registerViewControllerReigsterSuccess(self)
         }
 
         loginButton.addAction { [weak self] in
             guard let self = self else { return }
-            self.delegate?.registerViewControllerTapLogin(self)
+            self.coordinator?.registerViewControllerTapLogin(self)
         }
 
     }

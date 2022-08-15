@@ -14,12 +14,12 @@ protocol LoginCoordinatorDelegate: AnyObject {
 
 class LoginCoordinator: BaseCoordinator {
 
-    weak var delegate: LoginCoordinatorDelegate?
+    weak var coordinator: LoginCoordinatorDelegate?
 
     init() {
         let rootViewController = LoginViewController()
         super.init(with: .root(rootViewController: rootViewController))
-        rootViewController.delegate = self
+        rootViewController.coordinator = self
     }
 
     deinit {
@@ -32,21 +32,21 @@ extension LoginCoordinator: LoginViewControllerCoordinator {
     func loginViewControllerDidSuccessLogin(_ viewController: LoginViewController) {
         if AuthRepository.shared.isNeedBiometricsCheck() {
             let nextViewController = BiometricsCheckViewController()
-            nextViewController.delegate = self
+            nextViewController.coordinator = self
             push(nextViewController, animated: true)
         } else {
-            delegate?.loginCoordinatorGotoMain(self)
+            coordinator?.loginCoordinatorGotoMain(self)
         }
     }
 
     func loginViewControllerTapRegister(_ viewController: LoginViewController) {
-        delegate?.loginCoordinatorGotoRegister(self)
+        coordinator?.loginCoordinatorGotoRegister(self)
     }
 }
 
 // MARK: - LoginViewControllerCoordinator
 extension LoginCoordinator: BiometricsCheckViewControllerCoordinator {
     func BiometricsCheckViewControllerDidSuccess(_ viewController: BiometricsCheckViewController) {
-        delegate?.loginCoordinatorGotoMain(self)
+        coordinator?.loginCoordinatorGotoMain(self)
     }
 }
