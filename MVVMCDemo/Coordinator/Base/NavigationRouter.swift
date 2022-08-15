@@ -34,14 +34,26 @@ public class NavigationRouter: NSObject {
 
 extension NavigationRouter: UINavigationControllerDelegate {
     public func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-        guard let dismissedVieController = navigationController.transitionCoordinator?.viewController(forKey: .from),
-              !navigationController.viewControllers.contains(dismissedVieController) else {
+        guard let transitionCoordinator = navigationController.transitionCoordinator,
+              let dismissFromViewController = transitionCoordinator.viewController(forKey: .from),
+              let dismissToViewController = transitionCoordinator.viewController(forKey: .to),
+              !navigationController.viewControllers.contains(dismissFromViewController) else {
+            return
+        }
+        
+//      以下代表此次 didshow 是 pop 行為造成
+//      Navigation : [ dismissToViewController <- dismissFromViewController ]
+
+        guard let dismissedCoordinator = dismissFromViewController.baseCoordinator else {
             return
         }
 
-        if let dismissedCoordinator = dismissedVieController.coordinator,
-           let startViewController = dismissedCoordinator.startViewController,
-           startViewController == dismissedVieController {
+//      TASK 1 : 因應 pop 的發生，需要修正 dismissedCoordinator - lastViewController
+        dismissedCoordinator.setLastViewController(dismissToViewController)
+        
+//      TASK 2 : 如果 pop 的 VC 已經是當前 Coordinator 最後一個管理的 VC , 則釋放 pop vc coordinator
+        if let startViewController = dismissedCoordinator.startViewController,
+           startViewController == dismissFromViewController {
             dismissedCoordinator.removeFromParent()
         }
     }
@@ -52,7 +64,7 @@ extension UIViewController {
         static var ownerKey: UInt = 0
     }
 
-    weak var coordinator: Coordinatable? {
+    weak var baseCoordinator: Coordinatable? {
         get {
             objc_getAssociatedObject(self, &CoordinatorAssociatedKeys.ownerKey) as? Coordinatable
         }
