@@ -41,19 +41,19 @@ extension NavigationRouter: UINavigationControllerDelegate {
             return
         }
 
-//      以下代表此次 didshow 是 pop 行為造成
+//      The following means that this didshow is caused by pop action
 //      Navigation : [ dismissToViewController <- dismissFromViewController ]
 
         guard let dismissedCoordinator = dismissFromViewController.baseCoordinator else {
             return
         }
 
-//      TASK 1 : 因應 pop 的發生，需要修正 dismissedCoordinator - lastViewController
+//      TASK 1 : Due to the occurrence of pop, needs to be corrected dismissedCoordinator - lastViewController
         dismissedCoordinator.setLastViewController(dismissToViewController)
 
-//      TASK 2 : 如果 pop 的 VC 已經是當前 Coordinator 最後一個管理的 VC , 則釋放 pop vc coordinator
+//      TASK 2 : If the VC of the pop is already the last VC managed by the current Coordinator , then release pop VC coordinator
         if let startViewController = dismissedCoordinator.startViewController,
-           startViewController == dismissFromViewController {
+           startViewController === dismissFromViewController {
             dismissedCoordinator.removeFromParent()
         }
     }

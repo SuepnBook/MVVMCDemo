@@ -39,13 +39,13 @@ extension CustomFlowCoordinator: CustomFlowViewControllerCoordinator {
 
     func customFlowViewControllerPushNewFlow(_ viewController: CustomFlowViewController) {
         let child = CustomFlowCoordinator(with: .push(router: router))
-        addChild(child)
+        setChild(child)
         child.start()
     }
 
     func customFlowViewControllerPresentNewFlow(_ viewController: CustomFlowViewController) {
         let child = CustomFlowCoordinator(with: .present(router: router))
-        addChild(child)
+        setChild(child)
         child.start()
     }
 

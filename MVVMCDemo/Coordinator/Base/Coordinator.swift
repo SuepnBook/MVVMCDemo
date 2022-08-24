@@ -10,7 +10,7 @@ import UIKit
 
 public protocol Coordinatable: AnyObject {
     var parent: Coordinatable? { get }
-    var children: [Coordinatable] { get }
+    var child: Coordinatable? { get }
 
     var startViewController: UIViewController? { get }
     var lastViewController: UIViewController? { get }
@@ -20,9 +20,7 @@ public protocol Coordinatable: AnyObject {
 
     func setParent(_ parent: Coordinatable?)
 
-    func addChild(_ child: Coordinatable)
-    func removeChild(_ child: Coordinatable)
-    func removeAllChildren()
+    func setChild(_ child: Coordinatable?)
     func removeFromParent()
 
     func setLastViewController(_ viewController: UIViewController)
@@ -30,14 +28,14 @@ public protocol Coordinatable: AnyObject {
 
 public extension Coordinatable {
     func removeFromParent() {
-        parent?.removeChild(self)
+        parent?.setChild(nil)
     }
 }
 
 public class BaseCoordinator: Coordinatable {
 
     public weak var parent: Coordinatable?
-    public var children: [Coordinatable] = []
+    public var child: Coordinatable?
 
     public var router: NavigationRouter
     public var navigator: UINavigationController {
@@ -106,27 +104,10 @@ public class BaseCoordinator: Coordinatable {
         self.parent = parent
     }
 
-    public func addChild(_ child: Coordinatable) {
-        child.setParent(self)
-        children.append(child)
-    }
-
-    public func removeAllChildren() {
-        children.forEach { child in
-            child.setParent(nil)
-            child.removeAllChildren()
-        }
-        children.removeAll()
-    }
-
-    public func removeChild(_ child: Coordinatable) {
-        for (index, coordinator) in children.enumerated() {
-            if coordinator === child {
-                children.remove(at: index)
-            }
-        }
-        child.removeAllChildren()
-        child.setParent(nil)
+    public func setChild(_ child: Coordinatable?) {
+        child?.setParent(self)
+        self.child = child
+//        self.child?.setParent(self)
     }
 
     public func setLastViewController(_ viewController: UIViewController) {
